@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       DRUG PROCESSING RECIPES
+       Three recipes covering the full production pipeline.
+       Design Decision #4: Drug lab for LYS and Fluff.
+       Campfire or drug lab for Mindcap (simple drying).
+       ============================================================ -->
+
+  <!-- ============================================================
+       1. DRY MINDCAP MUSHROOMS
+       3 raw mushrooms → 1 dried mindcap.
+       Available at campfire and drug lab.
+       Research: RP_MindcapPreparation (Neolithic, 600).
+       No skill requirement beyond plant sow skill.
+       ============================================================ -->
+  <RecipeDef>
+    <defName>RP_Make_DriedMindcap</defName>
+    <label>dry mindcap mushrooms</label>
+    <description>Carefully dry raw mindcap mushrooms to stabilize the psychoactive alkaloids. The drying process concentrates the compounds into a usable form.</description>
+    <jobString>Drying mindcap mushrooms.</jobString>
+    <workAmount>200</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_CookMeal</soundWorking>
+    <targetCountAdjustment>1</targetCountAdjustment>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RP_MindcapMushroom</li>
+          </thingDefs>
+        </filter>
+        <count>3</count>
+      </li>
+    </ingredients>
+    <products>
+      <RP_DriedMindcap>1</RP_DriedMindcap>
+    </products>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RP_MindcapMushroom</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <researchPrerequisite>RP_MindcapPreparation</researchPrerequisite>
+    <recipeUsers>
+      <li>Campfire</li>
+      <li>DrugLab</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <!-- ============================================================
+       2. SYNTHESIZE LYS
+       100 ergo + 1 neutroamine → 10 LYS.
+       Drug lab only.
+       Research: RP_LYSSynthesis (Industrial, 4000).
+       Skill: Crafting 8, Intellectual 12.
+       ============================================================ -->
+  <RecipeDef>
+    <defName>RP_Make_LYS</defName>
+    <label>synthesize LYS</label>
+    <description>Synthesize LYS from ergot alkaloids and neutroamine through a precise chemical process. Requires advanced knowledge and careful lab work.</description>
+    <jobString>Synthesizing LYS.</jobString>
+    <workAmount>600</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
+    <targetCountAdjustment>10</targetCountAdjustment>
+    <skillRequirements>
+      <Crafting>8</Crafting>
+      <Intellectual>12</Intellectual>
+    </skillRequirements>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RP_Ergo</li>
+          </thingDefs>
+        </filter>
+        <count>100</count>
+      </li>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>Neutroamine</li>
+          </thingDefs>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <products>
+      <RP_LYS>10</RP_LYS>
+    </products>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RP_Ergo</li>
+        <li>Neutroamine</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <researchPrerequisite>RP_LYSSynthesis</researchPrerequisite>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+  </RecipeDef>
+
+  <!-- ============================================================
+       3. SYNTHESIZE FLUFF
+       2 safrole → 1 fluff.
+       Drug lab only.
+       Research: RP_FluffSynthesis (Industrial, 1000).
+       Skill: Intellectual 4.
+       ============================================================ -->
+  <RecipeDef>
+    <defName>RP_Make_Fluff</defName>
+    <label>synthesize fluff</label>
+    <description>Process safrole oil into fluff through a relatively simple chemical reaction. Requires basic chemical knowledge.</description>
+    <jobString>Synthesizing fluff.</jobString>
+    <workAmount>400</workAmount>
+    <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
+    <effectWorking>Cook</effectWorking>
+    <soundWorking>Recipe_Drug</soundWorking>
+    <targetCountAdjustment>1</targetCountAdjustment>
+    <skillRequirements>
+      <Intellectual>4</Intellectual>
+    </skillRequirements>
+    <ingredients>
+      <li>
+        <filter>
+          <thingDefs>
+            <li>RP_Safrole</li>
+          </thingDefs>
+        </filter>
+        <count>2</count>
+      </li>
+    </ingredients>
+    <products>
+      <RP_Fluff>1</RP_Fluff>
+    </products>
+    <fixedIngredientFilter>
+      <thingDefs>
+        <li>RP_Safrole</li>
+      </thingDefs>
+    </fixedIngredientFilter>
+    <researchPrerequisite>RP_FluffSynthesis</researchPrerequisite>
+    <recipeUsers>
+      <li>DrugLab</li>
+    </recipeUsers>
+  </RecipeDef>
+
+</Defs>

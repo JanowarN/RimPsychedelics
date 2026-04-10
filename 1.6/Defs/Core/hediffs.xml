@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       RP_PsychedelicExperience
+       Hidden tracker hediff for Psychonaut progression.
+       Severity incremented by resolution logic only (no decay).
+       Removed entirely when Psychonaut trait is granted.
+       ============================================================ -->
+  <HediffDef>
+    <defName>RP_PsychedelicExperience</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>psychedelic experience</label>
+    <description>Placeholder description for RP_PsychedelicExperience. A hidden measure of accumulated psychedelic experience.</description>
+    <maxSeverity>0.7</maxSeverity>
+    <isBad>false</isBad>
+    <stages>
+      <li>
+        <label>curious</label>
+        <minSeverity>0.0</minSeverity>
+        <becomeVisible>false</becomeVisible>
+      </li>
+      <li>
+        <label>experienced</label>
+        <minSeverity>0.3</minSeverity>
+        <becomeVisible>false</becomeVisible>
+      </li>
+      <li>
+        <label>seasoned</label>
+        <minSeverity>0.5</minSeverity>
+        <becomeVisible>false</becomeVisible>
+      </li>
+    </stages>
+  </HediffDef>
+
+</Defs>

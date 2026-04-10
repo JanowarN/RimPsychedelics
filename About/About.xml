@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>RimPsychedelics</name>
+	<author>Janowar</author>
+	<packageId>Janowar.RimPsychedelics</packageId>
+
+	<supportedVersions>
+		<li>1.6</li>
+	</supportedVersions>
+
+	<description>
+For the psychonauts of the Rim.
+
+Adds a completely new drug effect mechanic to handle psychedelic class drugs.
+Allows for chained hediffs that build up to a peak, come back down, and have long resolution periods.
+A psychedelic trip may be good or bad, may inspire a pawn, may drive them insane, or permanently change the way they think.
+
+Includes a framework for psychedelic class drugs, and 3 new non-addictive psychedelic drugs:
+LYS - Hard to produce, long acting major mood boosts.
+Fluff - Moderately difficult to produce, stong social interaction effects. day-after crash.
+Mindcap - Easy to produce, strong and short acting, highly variable.
+
+New psychedelic class drugs can be added with XML only with a high degree of customization.
+Integrates with VSIE if installed.
+
+Additional contributors:
+Art - NelsonArts
+Original LYS mod - Bhel
+Descriptions and Flavor - TigerLily
+
+	</description>
+</ModMetaData>

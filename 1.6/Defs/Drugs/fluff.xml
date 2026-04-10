@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       1. CHEMICAL FOUNDATION
+       ============================================================ -->
+
+  <ChemicalDef>
+    <defName>RP_ChemicalFluff</defName>
+    <label>fluff</label>
+    <addictionHediff>RP_FluffAddictionDummy</addictionHediff>
+    <toleranceHediff>RP_FluffTolerance</toleranceHediff>
+    <onGeneratedAddictedToleranceChance>0.0</onGeneratedAddictedToleranceChance>
+  </ChemicalDef>
+
+  <HediffDef>
+    <defName>RP_FluffAddictionDummy</defName>
+    <hediffClass>Hediff_Addiction</hediffClass>
+    <label>fluff tolerance response</label>
+    <description>Placeholder description for RP_FluffAddictionDummy.</description>
+    <maxSeverity>0.01</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.0</severityPerDay>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- Tolerance: faster decay than LYS/Mindcap.
+       -0.3333/day → ~1.5 days below 50%, ~3 days to zero. -->
+  <HediffDef>
+    <defName>RP_FluffTolerance</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>fluff tolerance</label>
+    <description>Placeholder description for RP_FluffTolerance.</description>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.3333</severityPerDay>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- ============================================================
+       2. COME-UP HEDIFF
+       ~1 hour at base rate. Severity rises 0 → 1.0.
+       ============================================================ -->
+
+  <HediffDef>
+    <defName>RP_FluffComeUp</defName>
+    <hediffClass>RimPsychedelics.Hediff_PsychedelicComeUp</hediffClass>
+    <label>fluff come-up</label>
+    <description>Placeholder description for RP_FluffComeUp.</description>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>24.0</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+
+      <!-- Stage 1: "waiting" — minSeverity 0.0, ~20 min. No effects. -->
+      <li>
+        <label>waiting</label>
+        <minSeverity>0.0</minSeverity>
+      </li>
+
+      <!-- Stage 2: "rising" — minSeverity 0.33, ~40 min -->
+      <li>
+        <label>rising</label>
+        <minSeverity>0.33</minSeverity>
+        <baseMoodEffect>-1</baseMoodEffect>
+        <vomitMtbDays>8</vomitMtbDays>
+        <hungerRateFactor>0.7</hungerRateFactor>
+        <restFallFactor>0.5</restFallFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.03</offset></li>
+          <li><capacity>BloodPumping</capacity><offset>0.10</offset></li>
+          <li><capacity>Breathing</capacity><offset>0.05</offset></li>
+        </capMods>
+      </li>
+
+    </stages>
+  </HediffDef>
+
+  <!-- ============================================================
+       3. GOOD PEAK HEDIFF
+       ~5 hours. Severity decays 1.0 → 0. Light impairment.
+       Social opinion via ThoughtWorker, NOT opinionOfOthersFactor.
+       No thought nullification — Fluff overlays euphoria,
+       does not restructure consciousness.
+       ============================================================ -->
+
+  <HediffDef>
+    <defName>RP_FluffTripGood</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>fluff trip (good)</label>
+    <description>Placeholder description for RP_FluffTripGood.</description>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-4.8</severityPerDay>
+      </li>
+      <li Class="RimPsychedelics.HediffCompProperties_TripResolution">
+        <drugDef>RP_Fluff</drugDef>
+      </li>
+    </comps>
+    <stages>
+
+      <!-- Fading — minSeverity 0.0, ~1.5 hr -->
+      <li>
+        <label>fading</label>
+        <minSeverity>0.0</minSeverity>
+        <baseMoodEffect>15</baseMoodEffect>
+        <painFactor>0.4</painFactor>
+        <hungerRateFactor>0.5</hungerRateFactor>
+        <restFallFactor>0.3</restFallFactor>
+        <socialFightChanceFactor>0</socialFightChanceFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.02</offset></li>
+          <li><capacity>Sight</capacity><offset>-0.04</offset></li>
+          <li><capacity>Moving</capacity><offset>-0.02</offset></li>
+          <li><capacity>Manipulation</capacity><offset>-0.03</offset></li>
+          <li><capacity>Talking</capacity><offset>0.05</offset></li>
+          <li><capacity>Hearing</capacity><offset>-0.04</offset></li>
+          <li><capacity>BloodPumping</capacity><offset>0.10</offset></li>
+          <li><capacity>Breathing</capacity><offset>0.05</offset></li>
+          <li><capacity>Metabolism</capacity><offset>0.08</offset></li>
+        </capMods>
+      </li>
+
+      <!-- Plateau — minSeverity 0.30, ~2 hr -->
+      <li>
+        <label>plateau</label>
+        <minSeverity>0.30</minSeverity>
+        <baseMoodEffect>28</baseMoodEffect>
+        <painFactor>0.15</painFactor>
+        <hungerRateFactor>0.1</hungerRateFactor>
+        <restFallFactor>0.05</restFallFactor>
+        <socialFightChanceFactor>0</socialFightChanceFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.04</offset></li>
+          <li><capacity>Sight</capacity><offset>-0.08</offset></li>
+          <li><capacity>Moving</capacity><offset>-0.04</offset></li>
+          <li><capacity>Manipulation</capacity><offset>-0.06</offset></li>
+          <li><capacity>Talking</capacity><offset>0.12</offset></li>
+          <li><capacity>Hearing</capacity><offset>-0.08</offset></li>
+          <li><capacity>BloodPumping</capacity><offset>0.20</offset></li>
+          <li><capacity>Breathing</capacity><offset>0.12</offset></li>
+          <li><capacity>Metabolism</capacity><offset>0.15</offset></li>
+        </capMods>
+      </li>
+
+      <!-- Rolling — minSeverity 0.70, ~1.5 hr -->
+      <li>
+        <label>rolling</label>
+        <minSeverity>0.70</minSeverity>
+        <baseMoodEffect>35</baseMoodEffect>
+        <painFactor>0.1</painFactor>
+        <hungerRateFactor>0.1</hungerRateFactor>
+        <restFallFactor>0.05</restFallFactor>
+        <socialFightChanceFactor>0</socialFightChanceFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.05</offset></li>
+          <li><capacity>Sight</capacity><offset>-0.10</offset></li>
+          <li><capacity>Moving</capacity><offset>-0.05</offset></li>
+          <li><capacity>Manipulation</capacity><offset>-0.08</offset></li>
+          <li><capacity>Talking</capacity><offset>0.15</offset></li>
+          <li><capacity>Hearing</capacity><offset>-0.10</offset></li>
+          <li><capacity>BloodPumping</capacity><offset>0.25</offset></li>
+          <li><capacity>Breathing</capacity><offset>0.15</offset></li>
+          <li><capacity>Metabolism</capacity><offset>0.20</offset></li>
+        </capMods>
+      </li>
+
+    </stages>
+  </HediffDef>
+
+  <!-- ============================================================
+       4. BAD PEAK HEDIFF
+       ~5 hours. Severity decays 1.0 → 0.
+       Uses BOTH opinionOfOthersFactor on stages (amplification)
+       AND ThoughtWorker_RPSocialOffset (mild flat negative).
+       ============================================================ -->
+
+  <HediffDef>
+    <defName>RP_FluffTripBad</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>fluff trip (bad)</label>
+    <description>Placeholder description for RP_FluffTripBad.</description>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>true</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-4.8</severityPerDay>
+      </li>
+      <li Class="RimPsychedelics.HediffCompProperties_TripResolution">
+        <drugDef>RP_Fluff</drugDef>
+      </li>
+    </comps>
+    <stages>
+
+      <!-- Fading — minSeverity 0.0, ~1.5 hr -->
+      <li>
+        <label>fading</label>
+        <minSeverity>0.0</minSeverity>
+        <baseMoodEffect>-8</baseMoodEffect>
+        <painFactor>0.4</painFactor>
+        <hungerRateFactor>0.5</hungerRateFactor>
+        <restFallFactor>0.3</restFallFactor>
+        <socialFightChanceFactor>0.8</socialFightChanceFactor>
+        <opinionOfOthersFactor>1.1</opinionOfOthersFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.02</offset></li>
+          <li><capacity>Sight</capacity><offset>-0.04</offset></li>
+          <li><capacity>Moving</capacity><offset>-0.02</offset></li>
+          <li><capacity>Manipulation</capacity><offset>-0.03</offset></li>
+          <li><capacity>Talking</capacity><offset>0.05</offset></li>
+          <li><capacity>Hearing</capacity><offset>-0.04</offset></li>
+          <li><capacity>BloodPumping</capacity><offset>0.10</offset></li>
+          <li><capacity>Breathing</capacity><offset>0.05</offset></li>
+          <li><capacity>Metabolism</capacity><offset>0.08</offset></li>
+        </capMods>
+      </li>
+
+      <!-- Plateau — minSeverity 0.30, ~2 hr -->
+      <li>
+        <label>plateau</label>
+        <minSeverity>0.30</minSeverity>
+        <baseMoodEffect>-10</baseMoodEffect>
+        <painFactor>0.15</painFactor>
+        <hungerRateFactor>0.1</hungerRateFactor>
+        <restFallFactor>0.05</restFallFactor>
+        <socialFightChanceFactor>0.3</socialFightChanceFactor>
+        <opinionOfOthersFactor>1.3</opinionOfOthersFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.04</offset></li>
+          <li><capacity>Sight</capacity><offset>-0.08</offset></li>
+          <li><capacity>Moving</capacity><offset>-0.04</offset></li>
+          <li><capacity>Manipulation</capacity><offset>-0.06</offset></li>
+          <li><capacity>Talking</capacity><offset>0.12</offset></li>
+          <li><capacity>Hearing</capacity><offset>-0.08</offset></li>
+          <li><capacity>BloodPumping</capacity><offset>0.20</offset></li>
+          <li><capacity>Breathing</capacity><offset>0.12</offset></li>
+          <li><capacity>Metabolism</capacity><offset>0.15</offset></li>
+        </capMods>
+      </li>
+
+      <!-- Rolling — minSeverity 0.70, ~1.5 hr -->
+      <li>
+        <label>rolling</label>
+        <minSeverity>0.70</minSeverity>
+        <baseMoodEffect>-6</baseMoodEffect>
+        <painFactor>0.1</painFactor>
+        <hungerRateFactor>0.1</hungerRateFactor>
+        <restFallFactor>0.05</restFallFactor>
+        <socialFightChanceFactor>0</socialFightChanceFactor>
+        <opinionOfOthersFactor>1.5</opinionOfOthersFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.05</offset></li>
+          <li><capacity>Sight</capacity><offset>-0.10</offset></li>
+          <li><capacity>Moving</capacity><offset>-0.05</offset></li>
+          <li><capacity>Manipulation</capacity><offset>-0.08</offset></li>
+          <li><capacity>Talking</capacity><offset>0.15</offset></li>
+          <li><capacity>Hearing</capacity><offset>-0.10</offset></li>
+          <li><capacity>BloodPumping</capacity><offset>0.25</offset></li>
+          <li><capacity>Breathing</capacity><offset>0.15</offset></li>
+          <li><capacity>Metabolism</capacity><offset>0.20</offset></li>
+        </capMods>
+      </li>
+
+    </stages>
+  </HediffDef>
+
+  <!-- ============================================================
+       5. RECOVERY (Shared Resolution — both valences)
+       ~1 day. Severity decays 1.0 → 0.
+       Universal hangover — the price of Fluff.
+       restFallFactor/hungerRateFactor above 1.0 = rebound.
+       ============================================================ -->
+
+  <HediffDef>
+    <defName>RP_FluffRecovery</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>fluff recovery</label>
+    <description>Placeholder description for RP_FluffRecovery.</description>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>true</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.0</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+
+      <!-- Fading — minSeverity 0.0, ~12 hr -->
+      <li>
+        <label>fading</label>
+        <minSeverity>0.0</minSeverity>
+        <baseMoodEffect>-2</baseMoodEffect>
+        <restFallFactor>1.1</restFallFactor>
+        <hungerRateFactor>1.1</hungerRateFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.04</offset></li>
+          <li><capacity>Talking</capacity><offset>-0.05</offset></li>
+          <li><capacity>Moving</capacity><offset>-0.03</offset></li>
+          <li><capacity>Manipulation</capacity><offset>-0.02</offset></li>
+          <li><capacity>BloodFiltration</capacity><offset>-0.02</offset></li>
+        </capMods>
+      </li>
+
+      <!-- Drained — minSeverity 0.5, ~12 hr -->
+      <li>
+        <label>drained</label>
+        <minSeverity>0.5</minSeverity>
+        <baseMoodEffect>-5</baseMoodEffect>
+        <restFallFactor>1.3</restFallFactor>
+        <hungerRateFactor>1.3</hungerRateFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.08</offset></li>
+          <li><capacity>Talking</capacity><offset>-0.10</offset></li>
+          <li><capacity>Moving</capacity><offset>-0.08</offset></li>
+          <li><capacity>Manipulation</capacity><offset>-0.05</offset></li>
+          <li><capacity>BloodFiltration</capacity><offset>-0.05</offset></li>
+        </capMods>
+      </li>
+
+    </stages>
+  </HediffDef>
+
+  <!-- ============================================================
+       6. DRUG THINGDEF
+       ============================================================ -->
+
+  <ThingDef ParentName="MakeableDrugBase">
+    <defName>RP_Fluff</defName>
+    <label>fluff</label>
+    <description>Placeholder description for RP_Fluff drug item.</description>
+    <graphicData>
+      <texPath>Things/Item/Drug/RP_Fluff</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <socialPropernessMatters>false</socialPropernessMatters>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>400</WorkToMake>
+      <MarketValue>22</MarketValue>
+      <Mass>0.01</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+    <techLevel>Industrial</techLevel>
+    <ingestible>
+      <joyKind>Chemical</joyKind>
+      <joy>1.0</joy>
+      <drugCategory>Social</drugCategory>
+      <baseIngestTicks>60</baseIngestTicks>
+      <outcomeDoers>
+        <li Class="RimPsychedelics.PsychedelicIngestionOutcomeDoer">
+          <toleranceChemical>RP_ChemicalFluff</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>RP_FluffTolerance</hediffDef>
+          <severity>1.0</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>RP_ChemicalFluff</chemical>
+        <addictiveness>0.0</addictiveness>
+        <minToleranceToAddict>9999.0</minToleranceToAddict>
+        <existingAddictionSeverityOffset>0</existingAddictionSeverityOffset>
+        <needLevelOffset>0</needLevelOffset>
+        <listOrder>2020</listOrder>
+      </li>
+    </comps>
+
+    <modExtensions>
+      <li Class="RimPsychedelics.PsychedelicDrugExtension">
+
+        <!-- Hediff references — both resolutions point to same def -->
+        <hediffDefComeUp>RP_FluffComeUp</hediffDefComeUp>
+        <hediffDefPositiveTrip>RP_FluffTripGood</hediffDefPositiveTrip>
+        <hediffDefNegativeTrip>RP_FluffTripBad</hediffDefNegativeTrip>
+        <hediffDefPositiveResolution>RP_FluffRecovery</hediffDefPositiveResolution>
+        <hediffDefNegativeResolution>RP_FluffRecovery</hediffDefNegativeResolution>
+
+        <!-- Tolerance -->
+        <toleranceChemical>RP_ChemicalFluff</toleranceChemical>
+        <noTripToleranceThreshold>0.5</noTripToleranceThreshold>
+
+        <!-- Psychonaut progression — Fluff does not contribute -->
+        <psychonautExperienceGain>0</psychonautExperienceGain>
+        <countsPsychonautExperience>false</countsPsychonautExperience>
+
+        <!-- Valence curves — normal pawn (safest drug) -->
+        <goodTripChanceAtZeroMood>0.40</goodTripChanceAtZeroMood>
+        <goodTripChanceUpperLimit>0.95</goodTripChanceUpperLimit>
+        <goodTripTransitionPoint>0.23</goodTripTransitionPoint>
+        <goodTripPlateauPoint>0.35</goodTripPlateauPoint>
+
+        <!-- Valence curves — Psychonaut -->
+        <psychonautGoodTripChanceAtZeroMood>0.65</psychonautGoodTripChanceAtZeroMood>
+        <psychonautGoodTripChanceUpperLimit>0.98</psychonautGoodTripChanceUpperLimit>
+        <psychonautGoodTripTransitionPoint>0.20</psychonautGoodTripTransitionPoint>
+        <psychonautGoodTripPlateauPoint>0.35</psychonautGoodTripPlateauPoint>
+
+        <!-- Ritual bonus -->
+        <ritualGoodTripChanceBonus>0.10</ritualGoodTripChanceBonus>
+
+        <!-- Inspiration — Fluff does not inspire -->
+        <canGoodTripInspire>false</canGoodTripInspire>
+        <canBadTripInspire>false</canBadTripInspire>
+        <inspirationChance>0.0</inspirationChance>
+
+        <!-- Trait modification — disabled for Fluff -->
+        <canModifyTraits>false</canModifyTraits>
+
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- ============================================================
+       7. SOCIAL OPINION THOUGHTDEFS
+       Fluff uses ThoughtWorker_RPSocialOffset for flat opinion
+       offsets rather than (or in addition to) opinionOfOthersFactor.
+       ============================================================ -->
+
+  <!-- Good trip: universal "love everyone" effect.
+       Thresholds align with peak hediff stage boundaries.
+       2 thresholds → 3 stages. -->
+  <ThoughtDef>
+    <defName>RP_FluffGoodTripSocial</defName>
+    <workerClass>RimPsychedelics.ThoughtWorker_RPSocialOffset</workerClass>
+    <modExtensions>
+      <li Class="RimPsychedelics.SocialOffsetExtension">
+        <hediffDef>RP_FluffTripGood</hediffDef>
+        <severityThresholds>
+          <li>0.70</li>
+          <li>0.30</li>
+        </severityThresholds>
+      </li>
+    </modExtensions>
+    <stages>
+      <!-- Above 0.70 (Rolling) -->
+      <li>
+        <label>rolling on fluff</label>
+        <description>Placeholder description for RP_FluffGoodTripSocial Rolling stage.</description>
+        <opinionOffset>40</opinionOffset>
+      </li>
+      <!-- Above 0.30 (Plateau) -->
+      <li>
+        <label>fluff plateau</label>
+        <description>Placeholder description for RP_FluffGoodTripSocial Plateau stage.</description>
+        <opinionOffset>40</opinionOffset>
+      </li>
+      <!-- Below 0.30 (Fading) -->
+      <li>
+        <label>coming down from fluff</label>
+        <description>Placeholder description for RP_FluffGoodTripSocial Fading stage.</description>
+        <opinionOffset>20</opinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+  <!-- Bad trip: mild negative flat offset layered on top of
+       opinionOfOthersFactor already on the hediff stages.
+       2 thresholds → 3 stages. -->
+  <ThoughtDef>
+    <defName>RP_FluffBadTripSocial</defName>
+    <workerClass>RimPsychedelics.ThoughtWorker_RPSocialOffset</workerClass>
+    <modExtensions>
+      <li Class="RimPsychedelics.SocialOffsetExtension">
+        <hediffDef>RP_FluffTripBad</hediffDef>
+        <severityThresholds>
+          <li>0.70</li>
+          <li>0.30</li>
+        </severityThresholds>
+      </li>
+    </modExtensions>
+    <stages>
+      <!-- Above 0.70 (Rolling) — no flat offset during peak -->
+      <li>
+        <label>bad fluff trip</label>
+        <description>Placeholder description for RP_FluffBadTripSocial Rolling stage.</description>
+        <opinionOffset>0</opinionOffset>
+      </li>
+      <!-- Above 0.30 (Plateau) -->
+      <li>
+        <label>bad fluff plateau</label>
+        <description>Placeholder description for RP_FluffBadTripSocial Plateau stage.</description>
+        <opinionOffset>-5</opinionOffset>
+      </li>
+      <!-- Below 0.30 (Fading) -->
+      <li>
+        <label>bad fluff fading</label>
+        <description>Placeholder description for RP_FluffBadTripSocial Fading stage.</description>
+        <opinionOffset>-3</opinionOffset>
+      </li>
+    </stages>
+  </ThoughtDef>
+
+</Defs>

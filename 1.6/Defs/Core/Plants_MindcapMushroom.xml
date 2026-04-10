@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       MINDCAP MUSHROOM PLANT
+       Grows in darkness. Yield: 2 raw mushrooms per harvest.
+       Grow days: 8. Fertility sensitivity: 30%.
+       Sow tags: Ground, Hydroponic. Min skill: 4.
+
+       Animals grazing on growing plants WILL get precursor sickness
+       (toxic mushroom — same compound in plant and harvested form).
+       ============================================================ -->
+
+  <ThingDef ParentName="PlantBase">
+    <defName>RP_Plant_MindcapMushroom</defName>
+    <label>mindcap mushroom</label>
+    <description>A squat, luminous mushroom with a cap that seems to pulse faintly in the dark. The mindcap contains potent psychoactive alkaloids throughout its body. Raw consumption causes severe sickness in both humans and animals. When carefully dried, the alkaloids stabilize into a powerful psychedelic.\n\nMindcap mushrooms require darkness to grow and will die if exposed to sustained light.</description>
+    <statBases>
+      <MaxHitPoints>85</MaxHitPoints>
+      <Nutrition>0.18</Nutrition>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Plant/RP_MindcapMushroom</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <selectable>true</selectable>
+    <neverMultiSelect>false</neverMultiSelect>
+    <pathCost>14</pathCost>
+    <ingestible>
+      <preferability>DesperateOnly</preferability>
+      <foodType>Plant</foodType>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>RP_RawPrecursorSickness</hediffDef>
+          <severity>1.0</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <plant>
+      <growDays>8</growDays>
+      <fertilitySensitivity>0.3</fertilitySensitivity>
+      <harvestYield>2</harvestYield>
+      <harvestedThingDef>RP_MindcapMushroom</harvestedThingDef>
+      <growMinGlow>0</growMinGlow>
+      <growOptimalGlow>0</growOptimalGlow>
+      <dieIfLeafless>false</dieIfLeafless>
+      <leaflessGraphicPath>Things/Plant/RP_MindcapMushroom_Leafless</leaflessGraphicPath>
+      <sowTags>
+        <li>Ground</li>
+        <li>Hydroponic</li>
+      </sowTags>
+      <sowMinSkill>4</sowMinSkill>
+      <sowResearchPrerequisites>
+        <li>RP_MindcapPreparation</li>
+      </sowResearchPrerequisites>
+      <topWindExposure>0</topWindExposure>
+      <wildOrder>2</wildOrder>
+      <purpose>Food</purpose>
+    </plant>
+  </ThingDef>
+
+</Defs>

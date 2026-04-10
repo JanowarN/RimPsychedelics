@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       PRECURSOR RESOURCES
+       Harvested items used in drug processing recipes.
+       ============================================================ -->
+
+  <!-- ============================================================
+       1. RAW MINDCAP MUSHROOM
+       Harvested from RP_Plant_MindcapMushroom. Rottable (10 days).
+       Ingestible (DesperateOnly) — causes RP_RawPrecursorSickness.
+       3 mushrooms → 1 dried mindcap.
+       ============================================================ -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>RP_MindcapMushroom</defName>
+    <label>raw mindcap mushroom</label>
+    <description>A freshly harvested mindcap mushroom, still faintly luminous. The raw flesh is saturated with unstable psychoactive compounds that cause violent sickness when consumed. The mushrooms must be carefully dried before the alkaloids become usable.\n\nPerishable. Keep refrigerated or process quickly.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/RP_MindcapMushroom</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <socialPropernessMatters>false</socialPropernessMatters>
+    <statBases>
+      <MarketValue>3</MarketValue>
+      <Mass>0.03</Mass>
+      <Flammability>1.0</Flammability>
+      <MaxHitPoints>60</MaxHitPoints>
+      <DeteriorationRate>6</DeteriorationRate>
+    </statBases>
+    <thingCategories>
+      <li>PlantMatter</li>
+    </thingCategories>
+    <stackLimit>75</stackLimit>
+    <ingestible>
+      <preferability>DesperateOnly</preferability>
+      <foodType>Plant</foodType>
+      <baseIngestTicks>180</baseIngestTicks>
+      <nutrition>0.05</nutrition>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>RP_RawPrecursorSickness</hediffDef>
+          <severity>1.0</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>10</daysToRotStart>
+        <rotDestroySpeedFactor>1</rotDestroySpeedFactor>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ============================================================
+       2. ERGO (Raw Ergot Alkaloid Pods)
+       Harvested from RP_Plant_Ergo. Rottable (30 days).
+       Ingestible (DesperateOnly) — causes RP_RawPrecursorSickness.
+       100 ergo + 1 neutroamine → 10 LYS.
+       ============================================================ -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>RP_Ergo</defName>
+    <label>ergo</label>
+    <description>Dark, wrinkled fungal pods harvested from the ergo plant. They contain volatile ergot alkaloids — the raw precursor to LYS. Consuming the pods raw causes severe, incapacitating sickness.\n\nThe alkaloids are volatile but preserved somewhat within the pod. Store in a cool area and process before they degrade.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/RP_Ergo</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <socialPropernessMatters>false</socialPropernessMatters>
+    <statBases>
+      <MarketValue>0.3</MarketValue>
+      <Mass>0.008</Mass>
+      <Flammability>1.0</Flammability>
+      <MaxHitPoints>60</MaxHitPoints>
+      <DeteriorationRate>4</DeteriorationRate>
+    </statBases>
+    <thingCategories>
+      <li>PlantMatter</li>
+    </thingCategories>
+    <stackLimit>500</stackLimit>
+    <ingestible>
+      <preferability>DesperateOnly</preferability>
+      <foodType>Plant</foodType>
+      <baseIngestTicks>100</baseIngestTicks>
+      <nutrition>0.02</nutrition>
+      <outcomeDoers>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>RP_RawPrecursorSickness</hediffDef>
+          <severity>1.0</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>30</daysToRotStart>
+        <rotDestroySpeedFactor>1</rotDestroySpeedFactor>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ============================================================
+       3. SAFROLE OIL
+       Harvested from RP_ChoppedStumpSassafras. Rottable (30 days).
+       Not ingestible — volatile oil, not food.
+       2 safrole → 1 fluff.
+       ============================================================ -->
+  <ThingDef ParentName="ResourceBase">
+    <defName>RP_Safrole</defName>
+    <label>safrole</label>
+    <description>A pungent, oily extract from sassafras root bark. Safrole is the key precursor in the synthesis of fluff. The oil is volatile and degrades over time — process it before it loses potency.\n\nNot edible. Has no nutritional value and smells like root beer left in the sun too long.</description>
+    <graphicData>
+      <texPath>Things/Item/Resource/RP_Safrole</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <socialPropernessMatters>false</socialPropernessMatters>
+    <statBases>
+      <MarketValue>3</MarketValue>
+      <Mass>0.05</Mass>
+      <Flammability>1.2</Flammability>
+      <MaxHitPoints>50</MaxHitPoints>
+      <DeteriorationRate>4</DeteriorationRate>
+    </statBases>
+    <thingCategories>
+      <li>PlantMatter</li>
+    </thingCategories>
+    <stackLimit>150</stackLimit>
+    <comps>
+      <li Class="CompProperties_Rottable">
+        <daysToRotStart>30</daysToRotStart>
+        <rotDestroySpeedFactor>1</rotDestroySpeedFactor>
+      </li>
+    </comps>
+  </ThingDef>
+
+  <!-- ============================================================
+       4. RAW PRECURSOR SICKNESS HEDIFF
+       Applied by vanilla IngestionOutcomeDoer_GiveHediff when
+       raw Mindcap mushrooms or Ergo are consumed.
+       Also applied when animals graze on growing mindcap plants.
+       Affects humanlikes and animals equally. No custom C# needed.
+       ~1 day total duration. Severely incapacitating.
+       ============================================================ -->
+  <HediffDef>
+    <defName>RP_RawPrecursorSickness</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>precursor sickness</label>
+    <description>Severe sickness caused by consuming raw psychedelic precursors. The unstable alkaloids wreak havoc on the body before being metabolized. The affected creature is effectively incapacitated during the worst of it.</description>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>true</isBad>
+    <tendable>false</tendable>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.0</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+
+      <!-- Stage 1: "recovering" — minSeverity 0.0, ~12 hr
+           The tail end. Still miserable but functional. -->
+      <li>
+        <label>recovering</label>
+        <minSeverity>0.0</minSeverity>
+        <vomitMtbDays>0.5</vomitMtbDays>
+        <painOffset>0.10</painOffset>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.20</offset></li>
+          <li><capacity>Moving</capacity><offset>-0.15</offset></li>
+          <li><capacity>Manipulation</capacity><offset>-0.10</offset></li>
+          <li><capacity>Sight</capacity><offset>-0.15</offset></li>
+          <li><capacity>BloodFiltration</capacity><offset>-0.08</offset></li>
+        </capMods>
+      </li>
+
+      <!-- Stage 2: "delirious" — minSeverity 0.5, ~12 hr
+           The acute phase. Completely incapacitating.
+           Small animals may die from consciousness drop alone. -->
+      <li>
+        <label>delirious</label>
+        <minSeverity>0.5</minSeverity>
+        <vomitMtbDays>0.08</vomitMtbDays>
+        <painOffset>0.30</painOffset>
+        <hungerRateFactor>0.1</hungerRateFactor>
+        <restFallFactor>0.1</restFallFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.50</offset></li>
+          <li><capacity>Moving</capacity><offset>-0.40</offset><setMax>0.30</setMax></li>
+          <li><capacity>Manipulation</capacity><offset>-0.30</offset></li>
+          <li><capacity>Sight</capacity><offset>-0.40</offset></li>
+          <li><capacity>Hearing</capacity><offset>-0.30</offset></li>
+          <li><capacity>Talking</capacity><offset>-0.30</offset></li>
+          <li><capacity>BloodFiltration</capacity><offset>-0.15</offset></li>
+        </capMods>
+      </li>
+
+    </stages>
+  </HediffDef>
+
+</Defs>

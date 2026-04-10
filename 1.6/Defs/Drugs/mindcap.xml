@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       1. CHEMICAL FOUNDATION
+       ============================================================ -->
+
+  <ChemicalDef>
+    <defName>RP_ChemicalMindcap</defName>
+    <label>mindcap</label>
+    <addictionHediff>RP_MindcapAddictionDummy</addictionHediff>
+    <toleranceHediff>RP_MindcapTolerance</toleranceHediff>
+    <onGeneratedAddictedToleranceChance>0.0</onGeneratedAddictedToleranceChance>
+  </ChemicalDef>
+
+  <HediffDef>
+    <defName>RP_MindcapAddictionDummy</defName>
+    <hediffClass>Hediff_Addiction</hediffClass>
+    <label>mindcap tolerance response</label>
+    <description>Placeholder description for RP_MindcapAddictionDummy.</description>
+    <maxSeverity>0.01</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-1.0</severityPerDay>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <HediffDef>
+    <defName>RP_MindcapTolerance</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>mindcap tolerance</label>
+    <description>Placeholder description for RP_MindcapTolerance.</description>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.10</severityPerDay>
+      </li>
+    </comps>
+  </HediffDef>
+
+  <!-- ============================================================
+       2. COME-UP HEDIFF
+       ~1 hour at base rate. Severity rises 0 → 1.0.
+       ============================================================ -->
+
+  <HediffDef>
+    <defName>RP_MindcapComeUp</defName>
+    <hediffClass>RimPsychedelics.Hediff_PsychedelicComeUp</hediffClass>
+    <label>mindcap come-up</label>
+    <description>Placeholder description for RP_MindcapComeUp.</description>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>24.0</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+
+      <!-- Stage 1: "waiting" — minSeverity 0.0, ~20 min -->
+      <li>
+        <label>waiting</label>
+        <minSeverity>0.0</minSeverity>
+        <baseMoodEffect>2</baseMoodEffect>
+      </li>
+
+      <!-- Stage 2: "hitting" — minSeverity 0.33, ~40 min -->
+      <li>
+        <label>hitting</label>
+        <minSeverity>0.33</minSeverity>
+        <baseMoodEffect>-5</baseMoodEffect>
+        <vomitMtbDays>0.25</vomitMtbDays>
+        <hungerRateFactor>0.4</hungerRateFactor>
+        <restFallFactor>0.2</restFallFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.08</offset></li>
+          <li><capacity>Moving</capacity><offset>-0.20</offset></li>
+          <li><capacity>BloodFiltration</capacity><offset>-0.05</offset></li>
+          <li><capacity>BloodPumping</capacity><offset>0.15</offset></li>
+          <li><capacity>Breathing</capacity><offset>0.10</offset></li>
+          <li><capacity>Metabolism</capacity><offset>0.10</offset></li>
+          <li><capacity>Sight</capacity><offset>-0.15</offset></li>
+          <li><capacity>Manipulation</capacity><offset>-0.08</offset></li>
+          <li><capacity>Talking</capacity><offset>-0.05</offset></li>
+          <li><capacity>Hearing</capacity><offset>-0.10</offset></li>
+        </capMods>
+      </li>
+
+    </stages>
+  </HediffDef>
+
+  <!-- ============================================================
+       3. GOOD PEAK HEDIFF
+       ~7 hours. Severity decays 1.0 → 0.
+       Shared physical effects + good-trip mood/social.
+       More nausea than LYS (persists through plateau).
+       ============================================================ -->
+
+  <HediffDef>
+    <defName>RP_MindcapTripGood</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>mindcap trip (good)</label>
+    <description>Placeholder description for RP_MindcapTripGood.</description>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-3.4286</severityPerDay>
+      </li>
+      <li Class="RimPsychedelics.HediffCompProperties_TripResolution">
+        <drugDef>RP_DriedMindcap</drugDef>
+      </li>
+    </comps>
+    <stages>
+
+      <!-- Fading — minSeverity 0.0, ~1.5 hr -->
+      <li>
+        <label>fading</label>
+        <minSeverity>0.0</minSeverity>
+        <baseMoodEffect>20</baseMoodEffect>
+        <painFactor>0.75</painFactor>
+        <hungerRateFactor>0.75</hungerRateFactor>
+        <restFallFactor>0.5</restFallFactor>
+        <forgetMemoryThoughtMtbDays>10</forgetMemoryThoughtMtbDays>
+        <pctConditionalThoughtsNullified>0.15</pctConditionalThoughtsNullified>
+        <socialFightChanceFactor>0.3</socialFightChanceFactor>
+        <opinionOfOthersFactor>1.5</opinionOfOthersFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.05</offset></li>
+          <li><capacity>Sight</capacity><offset>-0.15</offset></li>
+          <li><capacity>Moving</capacity><offset>-0.10</offset></li>
+          <li><capacity>Manipulation</capacity><offset>-0.07</offset></li>
+          <li><capacity>Talking</capacity><offset>-0.05</offset></li>
+          <li><capacity>Hearing</capacity><offset>-0.10</offset></li>
+          <li><capacity>BloodFiltration</capacity><offset>-0.03</offset></li>
+          <li><capacity>BloodPumping</capacity><offset>0.07</offset></li>
+          <li><capacity>Breathing</capacity><offset>0.05</offset></li>
+          <li><capacity>Metabolism</capacity><offset>0.05</offset></li>
+        </capMods>
+      </li>
+
+      <!-- Easing — minSeverity 0.21, ~2 hr -->
+      <li>
+        <label>easing</label>
+        <minSeverity>0.21</minSeverity>
+        <baseMoodEffect>25</baseMoodEffect>
+        <painFactor>0.6</painFactor>
+        <hungerRateFactor>0.5</hungerRateFactor>
+        <restFallFactor>0.25</restFallFactor>
+        <vomitMtbDays>3.0</vomitMtbDays>
+        <forgetMemoryThoughtMtbDays>6</forgetMemoryThoughtMtbDays>
+        <pctConditionalThoughtsNullified>0.35</pctConditionalThoughtsNullified>
+        <socialFightChanceFactor>0</socialFightChanceFactor>
+        <opinionOfOthersFactor>2.0</opinionOfOthersFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.10</offset></li>
+          <li><capacity>Sight</capacity><offset>-0.30</offset></li>
+          <li><capacity>Moving</capacity><offset>-0.20</offset></li>
+          <li><capacity>Manipulation</capacity><offset>-0.15</offset></li>
+          <li><capacity>Talking</capacity><offset>-0.10</offset></li>
+          <li><capacity>Hearing</capacity><offset>-0.20</offset></li>
+          <li><capacity>BloodFiltration</capacity><offset>-0.05</offset></li>
+          <li><capacity>BloodPumping</capacity><offset>0.15</offset></li>
+          <li><capacity>Breathing</capacity><offset>0.10</offset></li>
+          <li><capacity>Metabolism</capacity><offset>0.10</offset></li>
+        </capMods>
+      </li>
+
+      <!-- Plateau — minSeverity 0.50, ~2 hr -->
+      <li>
+        <label>plateau</label>
+        <minSeverity>0.50</minSeverity>
+        <baseMoodEffect>2</baseMoodEffect>
+        <painFactor>0.45</painFactor>
+        <hungerRateFactor>0.1</hungerRateFactor>
+        <restFallFactor>0.05</restFallFactor>
+        <vomitMtbDays>1.0</vomitMtbDays>
+        <forgetMemoryThoughtMtbDays>4</forgetMemoryThoughtMtbDays>
+        <pctConditionalThoughtsNullified>0.75</pctConditionalThoughtsNullified>
+        <socialFightChanceFactor>0</socialFightChanceFactor>
+        <opinionOfOthersFactor>3.0</opinionOfOthersFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.17</offset><setMax>0.85</setMax></li>
+          <li><capacity>Sight</capacity><offset>-0.50</offset></li>
+          <li><capacity>Moving</capacity><offset>-0.35</offset><setMax>0.75</setMax></li>
+          <li><capacity>Manipulation</capacity><offset>-0.25</offset></li>
+          <li><capacity>Talking</capacity><offset>-0.17</offset></li>
+          <li><capacity>Hearing</capacity><offset>-0.35</offset></li>
+          <li><capacity>BloodFiltration</capacity><offset>-0.08</offset></li>
+          <li><capacity>BloodPumping</capacity><offset>0.25</offset></li>
+          <li><capacity>Breathing</capacity><offset>0.17</offset></li>
+          <li><capacity>Metabolism</capacity><offset>0.17</offset></li>
+        </capMods>
+      </li>
+
+      <!-- Peaking — minSeverity 0.79, ~1.5 hr -->
+      <li>
+        <label>peaking</label>
+        <minSeverity>0.79</minSeverity>
+        <vomitMtbDays>0.5</vomitMtbDays>
+        <painFactor>0.4</painFactor>
+        <hungerRateFactor>0.1</hungerRateFactor>
+        <restFallFactor>0.05</restFallFactor>
+        <forgetMemoryThoughtMtbDays>3</forgetMemoryThoughtMtbDays>
+        <pctConditionalThoughtsNullified>0.75</pctConditionalThoughtsNullified>
+        <socialFightChanceFactor>0</socialFightChanceFactor>
+        <opinionOfOthersFactor>2.5</opinionOfOthersFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.20</offset><setMax>0.80</setMax></li>
+          <li><capacity>Sight</capacity><offset>-0.60</offset></li>
+          <li><capacity>Moving</capacity><offset>-0.40</offset><setMax>0.70</setMax></li>
+          <li><capacity>Manipulation</capacity><offset>-0.30</offset></li>
+          <li><capacity>Talking</capacity><offset>-0.20</offset></li>
+          <li><capacity>Hearing</capacity><offset>-0.40</offset></li>
+          <li><capacity>BloodFiltration</capacity><offset>-0.10</offset></li>
+          <li><capacity>BloodPumping</capacity><offset>0.30</offset></li>
+          <li><capacity>Breathing</capacity><offset>0.20</offset></li>
+          <li><capacity>Metabolism</capacity><offset>0.20</offset></li>
+        </capMods>
+      </li>
+
+    </stages>
+  </HediffDef>
+
+  <!-- ============================================================
+       4. BAD PEAK HEDIFF
+       ~7 hours. Severity decays 1.0 → 0.
+       Shared physical effects + bad-trip mood/social.
+       ============================================================ -->
+
+  <HediffDef>
+    <defName>RP_MindcapTripBad</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>mindcap trip (bad)</label>
+    <description>Placeholder description for RP_MindcapTripBad.</description>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>true</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-3.4286</severityPerDay>
+      </li>
+      <li Class="RimPsychedelics.HediffCompProperties_TripResolution">
+        <drugDef>RP_DriedMindcap</drugDef>
+      </li>
+    </comps>
+    <stages>
+
+      <!-- Fading — minSeverity 0.0, ~1.5 hr -->
+      <li>
+        <label>fading</label>
+        <minSeverity>0.0</minSeverity>
+        <baseMoodEffect>-15</baseMoodEffect>
+        <painFactor>0.75</painFactor>
+        <hungerRateFactor>0.75</hungerRateFactor>
+        <restFallFactor>0.5</restFallFactor>
+        <forgetMemoryThoughtMtbDays>10</forgetMemoryThoughtMtbDays>
+        <pctConditionalThoughtsNullified>0.15</pctConditionalThoughtsNullified>
+        <socialFightChanceFactor>1.8</socialFightChanceFactor>
+        <opinionOfOthersFactor>0.5</opinionOfOthersFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.05</offset></li>
+          <li><capacity>Sight</capacity><offset>-0.15</offset></li>
+          <li><capacity>Moving</capacity><offset>-0.10</offset></li>
+          <li><capacity>Manipulation</capacity><offset>-0.07</offset></li>
+          <li><capacity>Talking</capacity><offset>-0.05</offset></li>
+          <li><capacity>Hearing</capacity><offset>-0.10</offset></li>
+          <li><capacity>BloodFiltration</capacity><offset>-0.03</offset></li>
+          <li><capacity>BloodPumping</capacity><offset>0.07</offset></li>
+          <li><capacity>Breathing</capacity><offset>0.05</offset></li>
+          <li><capacity>Metabolism</capacity><offset>0.05</offset></li>
+        </capMods>
+      </li>
+
+      <!-- Easing — minSeverity 0.21, ~2 hr -->
+      <li>
+        <label>easing</label>
+        <minSeverity>0.21</minSeverity>
+        <baseMoodEffect>-18</baseMoodEffect>
+        <painFactor>0.6</painFactor>
+        <hungerRateFactor>0.5</hungerRateFactor>
+        <restFallFactor>0.25</restFallFactor>
+        <vomitMtbDays>3.0</vomitMtbDays>
+        <forgetMemoryThoughtMtbDays>6</forgetMemoryThoughtMtbDays>
+        <pctConditionalThoughtsNullified>0.35</pctConditionalThoughtsNullified>
+        <socialFightChanceFactor>1.3</socialFightChanceFactor>
+        <opinionOfOthersFactor>0.5</opinionOfOthersFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.10</offset></li>
+          <li><capacity>Sight</capacity><offset>-0.30</offset></li>
+          <li><capacity>Moving</capacity><offset>-0.20</offset></li>
+          <li><capacity>Manipulation</capacity><offset>-0.15</offset></li>
+          <li><capacity>Talking</capacity><offset>-0.10</offset></li>
+          <li><capacity>Hearing</capacity><offset>-0.20</offset></li>
+          <li><capacity>BloodFiltration</capacity><offset>-0.05</offset></li>
+          <li><capacity>BloodPumping</capacity><offset>0.15</offset></li>
+          <li><capacity>Breathing</capacity><offset>0.10</offset></li>
+          <li><capacity>Metabolism</capacity><offset>0.10</offset></li>
+        </capMods>
+      </li>
+
+      <!-- Plateau — minSeverity 0.50, ~2 hr -->
+      <li>
+        <label>plateau</label>
+        <minSeverity>0.50</minSeverity>
+        <baseMoodEffect>-5</baseMoodEffect>
+        <painFactor>0.45</painFactor>
+        <hungerRateFactor>0.1</hungerRateFactor>
+        <restFallFactor>0.05</restFallFactor>
+        <vomitMtbDays>1.0</vomitMtbDays>
+        <forgetMemoryThoughtMtbDays>4</forgetMemoryThoughtMtbDays>
+        <pctConditionalThoughtsNullified>0.75</pctConditionalThoughtsNullified>
+        <socialFightChanceFactor>0.7</socialFightChanceFactor>
+        <opinionOfOthersFactor>1.5</opinionOfOthersFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.17</offset><setMax>0.85</setMax></li>
+          <li><capacity>Sight</capacity><offset>-0.50</offset></li>
+          <li><capacity>Moving</capacity><offset>-0.35</offset><setMax>0.75</setMax></li>
+          <li><capacity>Manipulation</capacity><offset>-0.25</offset></li>
+          <li><capacity>Talking</capacity><offset>-0.17</offset></li>
+          <li><capacity>Hearing</capacity><offset>-0.35</offset></li>
+          <li><capacity>BloodFiltration</capacity><offset>-0.08</offset></li>
+          <li><capacity>BloodPumping</capacity><offset>0.25</offset></li>
+          <li><capacity>Breathing</capacity><offset>0.17</offset></li>
+          <li><capacity>Metabolism</capacity><offset>0.17</offset></li>
+        </capMods>
+      </li>
+
+      <!-- Peaking — minSeverity 0.79, ~1.5 hr -->
+      <li>
+        <label>peaking</label>
+        <minSeverity>0.79</minSeverity>
+        <vomitMtbDays>0.5</vomitMtbDays>
+        <painFactor>0.4</painFactor>
+        <hungerRateFactor>0.1</hungerRateFactor>
+        <restFallFactor>0.05</restFallFactor>
+        <forgetMemoryThoughtMtbDays>3</forgetMemoryThoughtMtbDays>
+        <pctConditionalThoughtsNullified>0.75</pctConditionalThoughtsNullified>
+        <socialFightChanceFactor>0</socialFightChanceFactor>
+        <opinionOfOthersFactor>2.5</opinionOfOthersFactor>
+        <capMods>
+          <li><capacity>Consciousness</capacity><offset>-0.20</offset><setMax>0.80</setMax></li>
+          <li><capacity>Sight</capacity><offset>-0.60</offset></li>
+          <li><capacity>Moving</capacity><offset>-0.40</offset><setMax>0.70</setMax></li>
+          <li><capacity>Manipulation</capacity><offset>-0.30</offset></li>
+          <li><capacity>Talking</capacity><offset>-0.20</offset></li>
+          <li><capacity>Hearing</capacity><offset>-0.40</offset></li>
+          <li><capacity>BloodFiltration</capacity><offset>-0.10</offset></li>
+          <li><capacity>BloodPumping</capacity><offset>0.30</offset></li>
+          <li><capacity>Breathing</capacity><offset>0.20</offset></li>
+          <li><capacity>Metabolism</capacity><offset>0.20</offset></li>
+        </capMods>
+      </li>
+
+    </stages>
+  </HediffDef>
+
+  <!-- ============================================================
+       5. AFTERGLOW (Positive Resolution)
+       ~3 days. Severity decays 1.0 → 0.
+       ============================================================ -->
+
+  <HediffDef>
+    <defName>RP_MindcapAfterglow</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>mindcap afterglow</label>
+    <description>Placeholder description for RP_MindcapAfterglow.</description>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>false</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.3333</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+
+      <!-- Fading — minSeverity 0.0, ~1 day -->
+      <li>
+        <label>fading</label>
+        <minSeverity>0.0</minSeverity>
+        <baseMoodEffect>5</baseMoodEffect>
+        <socialFightChanceFactor>0.9</socialFightChanceFactor>
+        <opinionOfOthersFactor>1.0</opinionOfOthersFactor>
+      </li>
+
+      <!-- Settling — minSeverity 0.33, ~1 day -->
+      <li>
+        <label>settling</label>
+        <minSeverity>0.33</minSeverity>
+        <baseMoodEffect>8</baseMoodEffect>
+        <socialFightChanceFactor>0.7</socialFightChanceFactor>
+        <opinionOfOthersFactor>1.1</opinionOfOthersFactor>
+      </li>
+
+      <!-- Glowing — minSeverity 0.67, ~1 day -->
+      <li>
+        <label>glowing</label>
+        <minSeverity>0.67</minSeverity>
+        <baseMoodEffect>10</baseMoodEffect>
+        <socialFightChanceFactor>0.5</socialFightChanceFactor>
+        <opinionOfOthersFactor>1.3</opinionOfOthersFactor>
+      </li>
+
+    </stages>
+  </HediffDef>
+
+  <!-- ============================================================
+       6. DISTURBED (Negative Resolution)
+       ~2 days. Severity decays 1.0 → 0.
+       ============================================================ -->
+
+  <HediffDef>
+    <defName>RP_MindcapDisturbed</defName>
+    <hediffClass>HediffWithComps</hediffClass>
+    <label>mindcap disturbed</label>
+    <description>Placeholder description for RP_MindcapDisturbed.</description>
+    <maxSeverity>1.0</maxSeverity>
+    <isBad>true</isBad>
+    <comps>
+      <li Class="HediffCompProperties_SeverityPerDay">
+        <severityPerDay>-0.5</severityPerDay>
+      </li>
+    </comps>
+    <stages>
+
+      <!-- Fading — minSeverity 0.0, ~0.67 days -->
+      <li>
+        <label>fading</label>
+        <minSeverity>0.0</minSeverity>
+        <baseMoodEffect>-2</baseMoodEffect>
+        <socialFightChanceFactor>1.1</socialFightChanceFactor>
+        <opinionOfOthersFactor>1.0</opinionOfOthersFactor>
+      </li>
+
+      <!-- Unsettled — minSeverity 0.33, ~0.67 days -->
+      <li>
+        <label>unsettled</label>
+        <minSeverity>0.33</minSeverity>
+        <baseMoodEffect>-6</baseMoodEffect>
+        <socialFightChanceFactor>1.4</socialFightChanceFactor>
+        <opinionOfOthersFactor>0.7</opinionOfOthersFactor>
+      </li>
+
+      <!-- Shaken — minSeverity 0.67, ~0.67 days -->
+      <li>
+        <label>shaken</label>
+        <minSeverity>0.67</minSeverity>
+        <baseMoodEffect>-10</baseMoodEffect>
+        <socialFightChanceFactor>1.8</socialFightChanceFactor>
+        <opinionOfOthersFactor>0.5</opinionOfOthersFactor>
+      </li>
+
+    </stages>
+  </HediffDef>
+
+  <!-- ============================================================
+       7. DRUG THINGDEF
+       ============================================================ -->
+
+  <ThingDef ParentName="MakeableDrugBase">
+    <defName>RP_DriedMindcap</defName>
+    <label>dried mindcap</label>
+    <description>Placeholder description for RP_DriedMindcap drug item.</description>
+    <graphicData>
+      <texPath>Things/Item/Drug/RP_DriedMindcap</texPath>
+      <graphicClass>Graphic_StackCount</graphicClass>
+    </graphicData>
+    <socialPropernessMatters>false</socialPropernessMatters>
+    <rotatable>false</rotatable>
+    <statBases>
+      <WorkToMake>200</WorkToMake>
+      <MarketValue>12</MarketValue>
+      <Mass>0.02</Mass>
+      <Flammability>0.7</Flammability>
+    </statBases>
+    <techLevel>Neolithic</techLevel>
+    <ingestible>
+      <joyKind>Chemical</joyKind>
+      <joy>0.90</joy>
+      <drugCategory>Hard</drugCategory>
+      <baseIngestTicks>120</baseIngestTicks>
+      <outcomeDoers>
+        <li Class="RimPsychedelics.PsychedelicIngestionOutcomeDoer">
+          <toleranceChemical>RP_ChemicalMindcap</toleranceChemical>
+        </li>
+        <li Class="IngestionOutcomeDoer_GiveHediff">
+          <hediffDef>RP_MindcapTolerance</hediffDef>
+          <severity>1.0</severity>
+        </li>
+      </outcomeDoers>
+    </ingestible>
+    <comps>
+      <li Class="CompProperties_Drug">
+        <chemical>RP_ChemicalMindcap</chemical>
+        <addictiveness>0.0</addictiveness>
+        <minToleranceToAddict>9999.0</minToleranceToAddict>
+        <existingAddictionSeverityOffset>0</existingAddictionSeverityOffset>
+        <needLevelOffset>0</needLevelOffset>
+        <listOrder>2010</listOrder>
+      </li>
+    </comps>
+
+    <modExtensions>
+      <li Class="RimPsychedelics.PsychedelicDrugExtension">
+
+        <!-- Hediff references -->
+        <hediffDefComeUp>RP_MindcapComeUp</hediffDefComeUp>
+        <hediffDefPositiveTrip>RP_MindcapTripGood</hediffDefPositiveTrip>
+        <hediffDefNegativeTrip>RP_MindcapTripBad</hediffDefNegativeTrip>
+        <hediffDefPositiveResolution>RP_MindcapAfterglow</hediffDefPositiveResolution>
+        <hediffDefNegativeResolution>RP_MindcapDisturbed</hediffDefNegativeResolution>
+
+        <!-- Tolerance -->
+        <toleranceChemical>RP_ChemicalMindcap</toleranceChemical>
+        <noTripToleranceThreshold>0.5</noTripToleranceThreshold>
+
+        <!-- Psychonaut progression -->
+        <psychonautExperienceGain>0.1</psychonautExperienceGain>
+        <countsPsychonautExperience>true</countsPsychonautExperience>
+
+        <!-- Valence curves — normal pawn -->
+        <goodTripChanceAtZeroMood>0.10</goodTripChanceAtZeroMood>
+        <goodTripChanceUpperLimit>0.85</goodTripChanceUpperLimit>
+        <goodTripTransitionPoint>0.45</goodTripTransitionPoint>
+        <goodTripPlateauPoint>0.80</goodTripPlateauPoint>
+
+        <!-- Valence curves — Psychonaut -->
+        <psychonautGoodTripChanceAtZeroMood>0.20</psychonautGoodTripChanceAtZeroMood>
+        <psychonautGoodTripChanceUpperLimit>0.90</psychonautGoodTripChanceUpperLimit>
+        <psychonautGoodTripTransitionPoint>0.20</psychonautGoodTripTransitionPoint>
+        <psychonautGoodTripPlateauPoint>0.55</psychonautGoodTripPlateauPoint>
+
+        <!-- Ritual bonus -->
+        <ritualGoodTripChanceBonus>0.15</ritualGoodTripChanceBonus>
+
+        <!-- Inspiration — both valences can inspire -->
+        <canGoodTripInspire>true</canGoodTripInspire>
+        <canBadTripInspire>true</canBadTripInspire>
+        <inspirationChance>0.15</inspirationChance>
+
+        <!-- Trait modification -->
+        <canModifyTraits>true</canModifyTraits>
+        <traitChangeChance>0.08</traitChangeChance>
+        <traitChangeChancePsychonaut>0.01</traitChangeChancePsychonaut>
+
+        <!-- Trait pool — Spectrums (narrower than LYS) -->
+        <traitSpectrums>
+          <li>
+            <traitDef>NaturalMood</traitDef>
+            <minDegree>-1</minDegree>
+            <maxDegree>1</maxDegree>
+            <selectionWeight>1.2</selectionWeight>
+            <goodTripBias>0.7</goodTripBias>
+            <badTripBias>-0.7</badTripBias>
+          </li>
+          <li>
+            <traitDef>Nerves</traitDef>
+            <minDegree>-1</minDegree>
+            <maxDegree>2</maxDegree>
+            <selectionWeight>1.0</selectionWeight>
+            <goodTripBias>0.6</goodTripBias>
+            <badTripBias>-0.7</badTripBias>
+          </li>
+          <li>
+            <traitDef>Neurotic</traitDef>
+            <minDegree>0</minDegree>
+            <maxDegree>2</maxDegree>
+            <selectionWeight>0.6</selectionWeight>
+            <goodTripBias>-0.7</goodTripBias>
+            <badTripBias>0.5</badTripBias>
+          </li>
+          <li>
+            <traitDef>DrugDesire</traitDef>
+            <minDegree>-1</minDegree>
+            <maxDegree>2</maxDegree>
+            <selectionWeight>0.5</selectionWeight>
+            <goodTripBias>0.3</goodTripBias>
+            <badTripBias>-0.8</badTripBias>
+          </li>
+          <li>
+            <traitDef>PsychicSensitivity</traitDef>
+            <minDegree>-1</minDegree>
+            <maxDegree>1</maxDegree>
+            <selectionWeight>0.3</selectionWeight>
+            <goodTripBias>0.4</goodTripBias>
+            <badTripBias>0.0</badTripBias>
+          </li>
+        </traitSpectrums>
+
+        <!-- Trait pool — Standalones (fewer than LYS) -->
+        <traitStandalones>
+          <li>
+            <traitDef>Kind</traitDef>
+            <degree>0</degree>
+            <selectionWeight>0.8</selectionWeight>
+            <goodTripBias>1.0</goodTripBias>
+            <badTripBias>-0.6</badTripBias>
+          </li>
+          <li>
+            <traitDef>Abrasive</traitDef>
+            <degree>0</degree>
+            <selectionWeight>0.5</selectionWeight>
+            <goodTripBias>-0.8</goodTripBias>
+            <badTripBias>1.0</badTripBias>
+          </li>
+          <li>
+            <traitDef>Ascetic</traitDef>
+            <degree>0</degree>
+            <selectionWeight>0.4</selectionWeight>
+            <goodTripBias>0.8</goodTripBias>
+            <badTripBias>0.4</badTripBias>
+          </li>
+        </traitStandalones>
+
+      </li>
+    </modExtensions>
+  </ThingDef>
+
+  <!-- Mindcap has no social ThoughtDefs. -->
+
+</Defs>

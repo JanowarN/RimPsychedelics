@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       RESEARCH TAB
+       Own tab for mod compatibility. Keeps RP research separate
+       from vanilla and other mod research trees.
+       ============================================================ -->
+
+  <ResearchTabDef>
+    <defName>RP_ResearchTab</defName>
+    <label>psychedelics</label>
+  </ResearchTabDef>
+
+  <!-- ============================================================
+       RESEARCH PROJECTS
+       Three projects unlocking the production chains.
+       Mindcap is standalone Neolithic. LYS and Fluff branch
+       off vanilla DrugProduction (Industrial).
+       All on the RP_ResearchTab custom tab.
+       ============================================================ -->
+
+  <!-- ============================================================
+       1. MINDCAP PREPARATION
+       Neolithic tier. No prerequisites. Unlocks:
+       - Sowing RP_Plant_MindcapMushroom
+       - Recipe: dry mindcap mushrooms
+       ============================================================ -->
+  <ResearchProjectDef>
+    <defName>RP_MindcapPreparation</defName>
+    <label>mindcap preparation</label>
+    <description>Study the mindcap mushroom and develop a method for drying the raw flesh to stabilize its psychoactive compounds. This simple preparation technique requires no advanced equipment — just patience, heat, and a steady hand.</description>
+    <baseCost>600</baseCost>
+    <techLevel>Neolithic</techLevel>
+    <tab>RP_ResearchTab</tab>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>0.00</researchViewY>
+  </ResearchProjectDef>
+
+  <!-- ============================================================
+       2. LYS SYNTHESIS
+       Industrial tier. Prerequisite: DrugProduction.
+       Unlocks:
+       - Sowing RP_Plant_Ergo
+       - Recipe: synthesize LYS
+       ============================================================ -->
+  <ResearchProjectDef>
+    <defName>RP_LYSSynthesis</defName>
+    <label>LYS synthesis</label>
+    <description>Develop the chemical process for synthesizing LYS from ergot alkaloids and neutroamine. The procedure is delicate and demanding, requiring a skilled chemist and a properly equipped drug lab. The result is the most potent psychedelic known to the Rim.</description>
+    <baseCost>4000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <tab>RP_ResearchTab</tab>
+    <prerequisites>
+      <li>DrugProduction</li>
+    </prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>-0.50</researchViewY>
+  </ResearchProjectDef>
+
+  <!-- ============================================================
+       3. FLUFF SYNTHESIS
+       Industrial tier. Prerequisite: DrugProduction.
+       Unlocks:
+       - Recipe: synthesize fluff
+       (Sassafras trees grow wild and don't need research to chop.
+        Stump harvesting for safrole is available without research.)
+       ============================================================ -->
+  <ResearchProjectDef>
+    <defName>RP_FluffSynthesis</defName>
+    <label>fluff synthesis</label>
+    <description>Learn to convert safrole oil into fluff, a gentle empathogenic psychedelic. The chemical process is straightforward compared to LYS synthesis, requiring only basic intellectual aptitude and a drug lab.</description>
+    <baseCost>1000</baseCost>
+    <techLevel>Industrial</techLevel>
+    <tab>RP_ResearchTab</tab>
+    <prerequisites>
+      <li>DrugProduction</li>
+    </prerequisites>
+    <researchViewX>2.00</researchViewX>
+    <researchViewY>0.50</researchViewY>
+  </ResearchProjectDef>
+
+</Defs>

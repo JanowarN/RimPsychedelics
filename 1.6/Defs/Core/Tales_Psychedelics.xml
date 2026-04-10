@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       TALES — Base Mod
+       8 TaleDefs for art generation. Grammar is placeholder —
+       full writing is Phase 9 work.
+
+       Custom tale class Tale_SinglePawnDefAndTrait stores
+       pawn + ThingDef (drug) + TraitDef. Used by trait change tales.
+       ============================================================ -->
+
+  <!-- ============================================================
+       1. FIRST TRIP
+       PermanentHistorical — fires once per pawn, on first resolution
+       where experience was 0 and drug has psychonautExperienceGain > 0.
+       ============================================================ -->
+  <TaleDef>
+    <defName>RP_FirstTrip</defName>
+    <taleClass>Tale_SinglePawn</taleClass>
+    <type>PermanentHistorical</type>
+    <baseInterest>20</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->the first vision of [PAWN_nameDef]</li>
+        <li>tale_noun->[PAWN_nameDef]'s awakening</li>
+        <li>tale_noun->the opening of [PAWN_nameDef]'s mind</li>
+        <li>image->a wide-eyed figure staring at something unseen [circumstance_phrase]</li>
+        <li>image->[PAWN_nameDef] sitting motionless, pupils vast as moons</li>
+        <li>image->a trembling hand reaching toward dissolving colors</li>
+        <li>desc_sentence->[PAWN_nameDef] saw the world unmade and remade for the first time.</li>
+        <li>desc_sentence->Nothing was the same after [PAWN_nameDef] first opened that door.</li>
+        <li>desc_sentence->The first time is always the strangest.</li>
+        <li>circumstance_phrase->under a sky that seemed to breathe</li>
+        <li>circumstance_phrase->in a room that no longer had corners</li>
+        <li>circumstance_phrase->while the ground hummed beneath them</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+  <!-- ============================================================
+       2. HAD GOOD TRIP
+       Volatile — fires at resolution on good valence,
+       zero tolerance at ingestion. Stores pawn + drug ThingDef.
+       ============================================================ -->
+  <TaleDef>
+    <defName>RP_HadGoodTrip</defName>
+    <taleClass>Tale_SinglePawnAndDef</taleClass>
+    <type>Volatile</type>
+    <baseInterest>15</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[PAWN_nameDef]'s beautiful [def_label] journey</li>
+        <li>tale_noun->the radiant vision of [PAWN_nameDef]</li>
+        <li>tale_noun->[PAWN_nameDef]'s [def_label] communion</li>
+        <li>image->[PAWN_nameDef] laughing at the beauty of ordinary things [circumstance_phrase]</li>
+        <li>image->a figure bathed in impossible light, weeping with joy</li>
+        <li>image->[PAWN_nameDef] watching colors bloom from [PAWN_possessive] own hands</li>
+        <li>desc_sentence->[PAWN_nameDef] took [def_label] and found the world generous.</li>
+        <li>desc_sentence->The [def_label] showed [PAWN_nameDef] something worth remembering.</li>
+        <li>desc_sentence->For a few hours, everything made sense to [PAWN_nameDef].</li>
+        <li>circumstance_phrase->while light pooled like water on the floor</li>
+        <li>circumstance_phrase->as the walls breathed gently in and out</li>
+        <li>circumstance_phrase->surrounded by a warmth that had no source</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+  <!-- ============================================================
+       3. HAD BAD TRIP
+       Volatile — fires at resolution on bad valence,
+       zero tolerance at ingestion. Stores pawn + drug ThingDef.
+       ============================================================ -->
+  <TaleDef>
+    <defName>RP_HadBadTrip</defName>
+    <taleClass>Tale_SinglePawnAndDef</taleClass>
+    <type>Volatile</type>
+    <baseInterest>15</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[PAWN_nameDef]'s dark [def_label] journey</li>
+        <li>tale_noun->the ordeal of [PAWN_nameDef]</li>
+        <li>tale_noun->[PAWN_nameDef]'s [def_label] nightmare</li>
+        <li>image->[PAWN_nameDef] curled on the ground, hands over [PAWN_possessive] ears [circumstance_phrase]</li>
+        <li>image->a figure trapped in a corridor of teeth and mirrors</li>
+        <li>image->[PAWN_nameDef] staring at [PAWN_possessive] own face, which was wrong</li>
+        <li>desc_sentence->[PAWN_nameDef] took [def_label] and found only darkness waiting.</li>
+        <li>desc_sentence->The [def_label] peeled back something [PAWN_nameDef] was not ready to see.</li>
+        <li>desc_sentence->[PAWN_nameDef] spent hours convinced [PAWN_pronoun] was dissolving.</li>
+        <li>circumstance_phrase->while shadows moved with purpose</li>
+        <li>circumstance_phrase->in a room that was slowly collapsing inward</li>
+        <li>circumstance_phrase->as time stretched into something cruel</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+  <!-- ============================================================
+       4. GAINED PSYCHONAUT
+       PermanentHistorical — fires once per pawn when the
+       Psychonaut trait is granted at resolution.
+       ============================================================ -->
+  <TaleDef>
+    <defName>RP_GainedPsychonaut</defName>
+    <taleClass>Tale_SinglePawn</taleClass>
+    <type>PermanentHistorical</type>
+    <baseInterest>25</baseInterest>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[PAWN_nameDef]'s enlightenment</li>
+        <li>tale_noun->the transcendence of [PAWN_nameDef]</li>
+        <li>tale_noun->[PAWN_nameDef], the psychonaut</li>
+        <li>image->[PAWN_nameDef] standing at the threshold between worlds [circumstance_phrase]</li>
+        <li>image->a figure whose eyes reflect something deeper than light</li>
+        <li>image->[PAWN_nameDef] walking calmly through a storm of visions</li>
+        <li>desc_sentence->[PAWN_nameDef] crossed over. The visions became a language [PAWN_pronoun] could speak.</li>
+        <li>desc_sentence->After enough journeys, [PAWN_nameDef] stopped coming all the way back.</li>
+        <li>desc_sentence->[PAWN_nameDef] learned to navigate the space between thoughts.</li>
+        <li>circumstance_phrase->at the place where perception folds</li>
+        <li>circumstance_phrase->with the calm of someone who has already seen everything</li>
+        <li>circumstance_phrase->in a silence that was somehow louder than sound</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+  <!-- ============================================================
+       5-8. TRAIT CHANGE TALES
+       Volatile, baseInterest 25, expireDays 180.
+       Custom tale class stores pawn + drug ThingDef + TraitDef.
+       Split by modification type for grammar specificity.
+       ============================================================ -->
+
+  <!-- 5. TRAIT GAINED — standalone trait added -->
+  <TaleDef>
+    <defName>RP_TraitGainedByTrip</defName>
+    <taleClass>RimPsychedelics.Tale_SinglePawnDefAndTrait</taleClass>
+    <type>Volatile</type>
+    <baseInterest>25</baseInterest>
+    <expireDays>180</expireDays>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[PAWN_nameDef]'s transformation</li>
+        <li>tale_noun->the [def_label] revelation of [PAWN_nameDef]</li>
+        <li>tale_noun->how [PAWN_nameDef] found [trait_label]</li>
+        <li>image->[PAWN_nameDef] emerging from a vision with new eyes [circumstance_phrase]</li>
+        <li>image->a figure cracking open like a seed, something new growing inside</li>
+        <li>desc_sentence->The [def_label] planted something in [PAWN_nameDef] that took root and grew.</li>
+        <li>desc_sentence->[PAWN_nameDef] came back from the trip a different person. The [trait_label] was new.</li>
+        <li>desc_sentence->Something shifted inside [PAWN_nameDef] and never shifted back.</li>
+        <li>circumstance_phrase->while the old self slept</li>
+        <li>circumstance_phrase->at the moment between forgetting and becoming</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+  <!-- 6. TRAIT LOST — standalone trait removed -->
+  <TaleDef>
+    <defName>RP_TraitLostByTrip</defName>
+    <taleClass>RimPsychedelics.Tale_SinglePawnDefAndTrait</taleClass>
+    <type>Volatile</type>
+    <baseInterest>25</baseInterest>
+    <expireDays>180</expireDays>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[PAWN_nameDef]'s shedding</li>
+        <li>tale_noun->the [def_label] unburdening of [PAWN_nameDef]</li>
+        <li>tale_noun->how [PAWN_nameDef] let go of [trait_label]</li>
+        <li>image->[PAWN_nameDef] peeling away a second skin [circumstance_phrase]</li>
+        <li>image->a figure leaving something heavy behind on the ground</li>
+        <li>desc_sentence->The [def_label] stripped away something [PAWN_nameDef] had carried for years.</li>
+        <li>desc_sentence->[PAWN_nameDef]'s [trait_label] dissolved in the vision and did not return.</li>
+        <li>desc_sentence->What [PAWN_nameDef] thought was permanent turned out to be optional.</li>
+        <li>circumstance_phrase->like a snake leaving its old skin behind</li>
+        <li>circumstance_phrase->in the quiet space between who they were and who they became</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+  <!-- 7. TRAIT INTENSIFIED — spectrum moved toward extreme -->
+  <TaleDef>
+    <defName>RP_TraitIntensifiedByTrip</defName>
+    <taleClass>RimPsychedelics.Tale_SinglePawnDefAndTrait</taleClass>
+    <type>Volatile</type>
+    <baseInterest>25</baseInterest>
+    <expireDays>180</expireDays>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[PAWN_nameDef]'s deepening</li>
+        <li>tale_noun->the [def_label] amplification of [PAWN_nameDef]</li>
+        <li>tale_noun->how [PAWN_nameDef]'s [trait_label] grew stronger</li>
+        <li>image->[PAWN_nameDef] burning brighter than before [circumstance_phrase]</li>
+        <li>image->a figure whose features sharpen into something more defined</li>
+        <li>desc_sentence->The [def_label] turned up the volume on something already inside [PAWN_nameDef].</li>
+        <li>desc_sentence->[PAWN_nameDef] was always [trait_label], but now more so. The trip made sure of that.</li>
+        <li>desc_sentence->What was once a tendency in [PAWN_nameDef] became a certainty.</li>
+        <li>circumstance_phrase->as if a dial had been turned and could not be turned back</li>
+        <li>circumstance_phrase->in the space where whispers become shouts</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+  <!-- 8. TRAIT SOFTENED — spectrum moved toward center -->
+  <TaleDef>
+    <defName>RP_TraitSoftenedByTrip</defName>
+    <taleClass>RimPsychedelics.Tale_SinglePawnDefAndTrait</taleClass>
+    <type>Volatile</type>
+    <baseInterest>25</baseInterest>
+    <expireDays>180</expireDays>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->[PAWN_nameDef]'s mellowing</li>
+        <li>tale_noun->the [def_label] softening of [PAWN_nameDef]</li>
+        <li>tale_noun->how [PAWN_nameDef]'s [trait_label] faded</li>
+        <li>image->[PAWN_nameDef] relaxing into a gentler shape [circumstance_phrase]</li>
+        <li>image->a figure whose sharp edges blur into something softer</li>
+        <li>desc_sentence->The [def_label] smoothed away an edge [PAWN_nameDef] didn't know was there.</li>
+        <li>desc_sentence->[PAWN_nameDef]'s [trait_label] used to define them. Now it's just a whisper.</li>
+        <li>desc_sentence->The trip filed down something jagged inside [PAWN_nameDef].</li>
+        <li>circumstance_phrase->like ice melting in warm hands</li>
+        <li>circumstance_phrase->in the long exhale between who they were and who they are</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+</Defs>

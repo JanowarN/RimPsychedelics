@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       Psychonaut Trait
+       Standalone trait (single degree 0). No stat offsets.
+       Interacts only with RP systems: valence curve selection,
+       trait modification chance, and progression exclusion.
+       Commonality 0.2 — can appear on generated pawns.
+       ============================================================ -->
+  <TraitDef>
+    <defName>Psychonaut</defName>
+    <commonality>0.2</commonality>
+    <degreeDatas>
+      <li>
+        <label>psychonaut</label>
+        <description>Placeholder description for Psychonaut trait. This pawn has extensive psychedelic experience and approaches altered states with practiced ease.</description>
+        <degree>0</degree>
+      </li>
+    </degreeDatas>
+  </TraitDef>
+
+</Defs>

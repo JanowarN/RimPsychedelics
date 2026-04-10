@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+  <!-- ============================================================
+       ERGO PLANT
+       Grain/fungal hybrid that grows ergot alkaloid pods.
+       Grow days: 14. Fertility sensitivity: 100%. Yield: 13.
+       Sow tags: Ground, Hydroponic. Min skill: 6.
+
+       Animals CAN graze safely — the stalk and leaves are
+       non-toxic. Only the harvested pods (Ergo item) cause
+       precursor sickness. The penalty for animal grazing is
+       losing a slow-growing crop.
+       ============================================================ -->
+
+  <ThingDef ParentName="PlantBase">
+    <defName>RP_Plant_Ergo</defName>
+    <label>ergo</label>
+    <description>A tall, grain-like plant with dark fungal pods clustered along its stalk. The pods contain volatile ergot alkaloids — the precursor to LYS. The stalks and leaves are harmless, but the harvested pods cause severe sickness if consumed raw.\n\nErgo is demanding to cultivate, requiring fertile soil and a skilled grower. Animals will happily eat the plant, destroying a slow and valuable crop.</description>
+    <statBases>
+      <MaxHitPoints>85</MaxHitPoints>
+      <Nutrition>0.2</Nutrition>
+    </statBases>
+    <graphicData>
+      <texPath>Things/Plant/RP_Ergo</texPath>
+      <graphicClass>Graphic_Random</graphicClass>
+    </graphicData>
+    <selectable>true</selectable>
+    <neverMultiSelect>false</neverMultiSelect>
+    <pathCost>14</pathCost>
+    <ingestible>
+      <preferability>DesperateOnly</preferability>
+      <foodType>Plant</foodType>
+      <!-- No outcomeDoers — plant itself is safe to eat.
+           Only the harvested Ergo pods cause sickness. -->
+    </ingestible>
+    <plant>
+      <growDays>14</growDays>
+      <fertilitySensitivity>1.0</fertilitySensitivity>
+      <harvestYield>13</harvestYield>
+      <harvestedThingDef>RP_Ergo</harvestedThingDef>
+      <dieIfLeafless>true</dieIfLeafless>
+      <sowTags>
+        <li>Ground</li>
+        <li>Hydroponic</li>
+      </sowTags>
+      <sowMinSkill>6</sowMinSkill>
+      <sowResearchPrerequisites>
+        <li>RP_LYSSynthesis</li>
+      </sowResearchPrerequisites>
+      <topWindExposure>0.1</topWindExposure>
+      <wildOrder>2</wildOrder>
+      <purpose>Food</purpose>
+    </plant>
+  </ThingDef>
+
+</Defs>

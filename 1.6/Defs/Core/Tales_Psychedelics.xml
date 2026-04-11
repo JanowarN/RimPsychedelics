@@ -48,6 +48,7 @@
     <taleClass>Tale_SinglePawnAndDef</taleClass>
     <type>Volatile</type>
     <baseInterest>15</baseInterest>
+    <defSymbol>def</defSymbol>
     <rulePack>
       <rulesStrings>
         <li>tale_noun->[PAWN_nameDef]'s beautiful [def_label] journey</li>
@@ -76,6 +77,7 @@
     <taleClass>Tale_SinglePawnAndDef</taleClass>
     <type>Volatile</type>
     <baseInterest>15</baseInterest>
+    <defSymbol>def</defSymbol>
     <rulePack>
       <rulesStrings>
         <li>tale_noun->[PAWN_nameDef]'s dark [def_label] journey</li>
@@ -133,8 +135,9 @@
   <TaleDef>
     <defName>RP_TraitGainedByTrip</defName>
     <taleClass>RimPsychedelics.Tale_SinglePawnDefAndTrait</taleClass>
-    <type>Volatile</type>
+    <type>Expirable</type>
     <baseInterest>25</baseInterest>
+    <defSymbol>def</defSymbol>
     <expireDays>180</expireDays>
     <rulePack>
       <rulesStrings>
@@ -156,8 +159,9 @@
   <TaleDef>
     <defName>RP_TraitLostByTrip</defName>
     <taleClass>RimPsychedelics.Tale_SinglePawnDefAndTrait</taleClass>
-    <type>Volatile</type>
+    <type>Expirable</type>
     <baseInterest>25</baseInterest>
+    <defSymbol>def</defSymbol>
     <expireDays>180</expireDays>
     <rulePack>
       <rulesStrings>
@@ -179,8 +183,9 @@
   <TaleDef>
     <defName>RP_TraitIntensifiedByTrip</defName>
     <taleClass>RimPsychedelics.Tale_SinglePawnDefAndTrait</taleClass>
-    <type>Volatile</type>
+    <type>Expirable</type>
     <baseInterest>25</baseInterest>
+    <defSymbol>def</defSymbol>
     <expireDays>180</expireDays>
     <rulePack>
       <rulesStrings>
@@ -202,8 +207,9 @@
   <TaleDef>
     <defName>RP_TraitSoftenedByTrip</defName>
     <taleClass>RimPsychedelics.Tale_SinglePawnDefAndTrait</taleClass>
-    <type>Volatile</type>
+    <type>Expirable</type>
     <baseInterest>25</baseInterest>
+    <defSymbol>def</defSymbol>
     <expireDays>180</expireDays>
     <rulePack>
       <rulesStrings>
@@ -217,6 +223,35 @@
         <li>desc_sentence->The trip filed down something jagged inside [PAWN_nameDef].</li>
         <li>circumstance_phrase->like ice melting in warm hands</li>
         <li>circumstance_phrase->in the long exhale between who they were and who they are</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+  <!-- ============================================================
+       9. SHARED TRIP
+       Volatile — fires when two pawns on the same drug interact
+       during peak. Requires VSIE. Stores both pawns + drug ThingDef.
+       ============================================================ -->
+  <TaleDef>
+    <defName>RP_SharedTrip</defName>
+    <taleClass>Tale_DoublePawnAndDef</taleClass>
+    <type>Volatile</type>
+    <baseInterest>12</baseInterest>
+    <defSymbol>def</defSymbol>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->the shared [def_label] journey of [PAWN_nameDef] and [OTHERPAWN_nameDef]</li>
+        <li>tale_noun->[PAWN_nameDef] and [OTHERPAWN_nameDef]'s [def_label] bond</li>
+        <li>tale_noun->the trip [PAWN_nameDef] and [OTHERPAWN_nameDef] took together</li>
+        <li>image->two figures sitting close, staring at the same invisible thing [circumstance_phrase]</li>
+        <li>image->[PAWN_nameDef] and [OTHERPAWN_nameDef] laughing at nothing, understanding everything</li>
+        <li>image->two silhouettes dissolving into the same light</li>
+        <li>desc_sentence->[PAWN_nameDef] and [OTHERPAWN_nameDef] took [def_label] together and found something between them.</li>
+        <li>desc_sentence->They didn't need words. The [def_label] said it for them.</li>
+        <li>desc_sentence->For a few hours, [PAWN_nameDef] and [OTHERPAWN_nameDef] were the same person.</li>
+        <li>circumstance_phrase->in a silence that held them both</li>
+        <li>circumstance_phrase->while the world softened around them</li>
+        <li>circumstance_phrase->somewhere between awake and elsewhere</li>
       </rulesStrings>
     </rulePack>
   </TaleDef>

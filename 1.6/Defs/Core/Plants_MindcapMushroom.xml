@@ -44,7 +44,6 @@
       <growMinGlow>0</growMinGlow>
       <growOptimalGlow>0</growOptimalGlow>
       <dieIfLeafless>false</dieIfLeafless>
-      <leaflessGraphicPath>Things/Plant/RP_MindcapMushroom_Leafless</leaflessGraphicPath>
       <sowTags>
         <li>Ground</li>
         <li>Hydroponic</li>

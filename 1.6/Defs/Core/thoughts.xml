@@ -21,4 +21,29 @@
     </stages>
   </ThoughtDef>
 
+  <!-- ============================================================
+       RP_SharedTripMemory
+       Social opinion thought. Active when a RP_SharedTrip tale
+       exists between two pawns. Gated behind VSIE being active.
+       ============================================================ -->
+  <ThoughtDef>
+    <defName>RP_SharedTripMemory</defName>
+    <thoughtClass>RimPsychedelics.Thought_SharedTrip</thoughtClass>
+    <workerClass>RimPsychedelics.ThoughtWorker_SharedTrip</workerClass>
+    <taleDef>RP_SharedTrip</taleDef>
+    <stages>
+      <li>
+        <label>shared a trip</label>
+        <description>We tripped together. There's a bond in that — something unspoken.</description>
+        <baseOpinionOffset>15</baseOpinionOffset>
+      </li>
+    </stages>
+    <modExtensions>
+      <li Class="RimPsychedelics.TaleFadeExtension">
+        <falloffDays>30</falloffDays>
+        <minimumOpinionOffset>5</minimumOpinionOffset>
+      </li>
+    </modExtensions>
+  </ThoughtDef>
+
 </Defs>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Messages -->
+  <RP_NoEffectTolerance>{0} took {1} but felt nothing. Too soon since the last dose.</RP_NoEffectTolerance>
+
+  <!-- Letters -->
+  <RP_TraitChanged>Personality changed</RP_TraitChanged>
+
+  <!-- Mod settings -->
+  <RP_Setting_TraitChanges_Label>Enable trait changes from psychedelic trips</RP_Setting_TraitChanges_Label>
+  <RP_Setting_TraitChanges_Tooltip>When enabled, psychedelic trips can permanently modify a pawn's personality traits. Disable to prevent all trip-induced trait changes.</RP_Setting_TraitChanges_Tooltip>
+
+</LanguageData>

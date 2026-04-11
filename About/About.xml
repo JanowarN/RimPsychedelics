@@ -21,7 +21,11 @@ Fluff - Moderately difficult to produce, stong social interaction effects. day-a
 Mindcap - Easy to produce, strong and short acting, highly variable.
 
 New psychedelic class drugs can be added with XML only with a high degree of customization.
-Integrates with VSIE if installed.
+
+supports:
+Vanilla Social Interactions Expanded - VSIE style inspirations and trip-related social memories (if VSIE memories are enabled)
+AlphaBiomes - lightly sprinkles sassafras trees into compatible biomes
+Dub's Bad Hygiene - default psychedelics that impact rest and hunger also impact bladder and thirst
 
 Additional contributors:
 Art - NelsonArts

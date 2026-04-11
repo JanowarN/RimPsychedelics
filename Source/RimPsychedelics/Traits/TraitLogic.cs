@@ -11,6 +11,8 @@ namespace RimPsychedelics
         public Trait toAdd;
         public string message;
         public TaleDef tale;
+        public TraitDef taleTraitDef;
+        public string taleTraitLabel;
     }
 
     public static class TraitLogic
@@ -21,6 +23,8 @@ namespace RimPsychedelics
             public Trait toAdd;
             public string message;
             public TaleDef tale;
+            public TraitDef taleTraitDef;
+            public string taleTraitLabel;
             public float weight;
         }
 
@@ -71,7 +75,9 @@ namespace RimPsychedelics
                 toRemove = selected.toRemove,
                 toAdd = selected.toAdd,
                 message = selected.message,
-                tale = selected.tale
+                tale = selected.tale,
+                taleTraitDef = selected.taleTraitDef,
+                taleTraitLabel = selected.taleTraitLabel
             };
         }
 
@@ -92,9 +98,9 @@ namespace RimPsychedelics
                     pawn);
             }
 
-            // Tale — requires custom Tale_SinglePawnDefAndTrait class (TODO: build tale class)
-            if (spawned && mod.tale != null)
-                TaleRecorder.RecordTale(mod.tale, pawn, drugDef, mod.toAdd?.def ?? mod.toRemove?.def);
+            // Tale
+            if (spawned && mod.tale != null && mod.taleTraitDef != null)
+                TaleRecorder.RecordTale(mod.tale, pawn, drugDef, mod.taleTraitDef, mod.taleTraitLabel);
         }
 
         public static void SafeAddTrait(Pawn pawn, Trait trait)
@@ -206,9 +212,18 @@ namespace RimPsychedelics
             // Determine tale: intensifying (away from center) vs softening (toward center)
             int currentDist = existing != null ? Math.Abs(existing.Degree) : 0;
             int targetDist = targetDegree.HasValue ? Math.Abs(targetDegree.Value) : 0;
-            TaleDef tale = targetDist > currentDist
+            bool isIntensifying = targetDist > currentDist;
+            TaleDef tale = isIntensifying
                 ? RP_TaleDefOf.RP_TraitIntensifiedByTrip
                 : RP_TaleDefOf.RP_TraitSoftenedByTrip;
+
+            // Tale trait: intensified → new trait, softened → old trait
+            TraitDef taleTraitDef = traitDef;
+            string taleTraitLabel;
+            if (isIntensifying)
+                taleTraitLabel = toAdd != null ? GetTraitLabel(traitDef, toAdd.Degree) : GetTraitLabel(traitDef, existing.Degree);
+            else
+                taleTraitLabel = toRemove != null ? GetTraitLabel(traitDef, toRemove.Degree) : GetTraitLabel(traitDef, existing.Degree);
 
             // Build notification message
             string customMsg = goHigher ? entry.higherMessage : entry.lowerMessage;
@@ -245,6 +260,8 @@ namespace RimPsychedelics
                 toAdd = toAdd,
                 message = message,
                 tale = tale,
+                taleTraitDef = taleTraitDef,
+                taleTraitLabel = taleTraitLabel,
                 weight = entry.selectionWeight
             });
         }
@@ -285,6 +302,8 @@ namespace RimPsychedelics
                     toAdd = new Trait(traitDef, entry.degree),
                     message = msg,
                     tale = RP_TaleDefOf.RP_TraitGainedByTrip,
+                    taleTraitDef = traitDef,
+                    taleTraitLabel = label,
                     weight = entry.selectionWeight
                 });
             }
@@ -303,6 +322,8 @@ namespace RimPsychedelics
                     toRemove = existing,
                     message = msg,
                     tale = RP_TaleDefOf.RP_TraitLostByTrip,
+                    taleTraitDef = traitDef,
+                    taleTraitLabel = existingLabel,
                     weight = entry.selectionWeight
                 });
             }

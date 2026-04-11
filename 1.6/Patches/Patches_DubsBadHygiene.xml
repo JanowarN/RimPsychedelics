@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<!-- ============================================================
+	     Dubs Bad Hygiene Compatibility
+	     Adds ThirstRateMultiplier (tracks hungerRateFactor) and
+	     BladderRateMultiplier (tracks restFallFactor) to all hediff
+	     stages that reduce food/rest needs during trips.
+	     ============================================================ -->
+
+	<!-- ==================== LYS COME-UP ==================== -->
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_LYSComeUp"]/stages/li[label="unsettled"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.5</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.3</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_LYSComeUp"]/stages/li[label="ascending"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.3</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.15</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<!-- ==================== LYS GOOD PEAK ==================== -->
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_LYSTripGood"]/stages/li[label="fading"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.5</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.3</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_LYSTripGood"]/stages/li[label="easing"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.1</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.05</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_LYSTripGood"]/stages/li[label="plateau"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.1</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.05</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_LYSTripGood"]/stages/li[label="peaking"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.1</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.05</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<!-- ==================== LYS BAD PEAK ==================== -->
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_LYSTripBad"]/stages/li[label="fading"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.5</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.3</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_LYSTripBad"]/stages/li[label="easing"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.1</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.05</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_LYSTripBad"]/stages/li[label="plateau"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.1</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.05</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_LYSTripBad"]/stages/li[label="peaking"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.1</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.05</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<!-- ==================== FLUFF COME-UP ==================== -->
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_FluffComeUp"]/stages/li[label="rising"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.7</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.5</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<!-- ==================== FLUFF GOOD PEAK ==================== -->
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_FluffTripGood"]/stages/li[label="fading"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.5</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.3</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_FluffTripGood"]/stages/li[label="plateau"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.1</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.05</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_FluffTripGood"]/stages/li[label="rolling"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.1</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.05</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<!-- ==================== FLUFF BAD PEAK ==================== -->
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_FluffTripBad"]/stages/li[label="fading"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.5</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.3</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_FluffTripBad"]/stages/li[label="plateau"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.1</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.05</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_FluffTripBad"]/stages/li[label="rolling"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.1</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.05</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<!-- ==================== FLUFF RECOVERY (thirst rebound only) ==================== -->
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_FluffRecovery"]/stages/li[label="fading"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>1.1</ThirstRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_FluffRecovery"]/stages/li[label="drained"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>1.3</ThirstRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<!-- ==================== MINDCAP COME-UP ==================== -->
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_MindcapComeUp"]/stages/li[label="hitting"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.4</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.2</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<!-- ==================== MINDCAP GOOD PEAK ==================== -->
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_MindcapTripGood"]/stages/li[label="fading"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.75</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.5</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_MindcapTripGood"]/stages/li[label="easing"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.5</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.25</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_MindcapTripGood"]/stages/li[label="plateau"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.1</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.05</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_MindcapTripGood"]/stages/li[label="peaking"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.1</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.05</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<!-- ==================== MINDCAP BAD PEAK ==================== -->
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_MindcapTripBad"]/stages/li[label="fading"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.75</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.5</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_MindcapTripBad"]/stages/li[label="easing"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.5</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.25</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_MindcapTripBad"]/stages/li[label="plateau"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.1</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.05</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_MindcapTripBad"]/stages/li[label="peaking"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.1</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.05</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+	<!-- ==================== PRECURSOR SICKNESS ==================== -->
+
+	<Operation Class="PatchOperationAdd" MayRequire="Dubwise.DubsBadHygiene">
+		<xpath>/Defs/HediffDef[defName="RP_RawPrecursorSickness"]/stages/li[label="delirious"]</xpath>
+		<value>
+			<statOffsets>
+				<ThirstRateMultiplier>0.1</ThirstRateMultiplier>
+				<BladderRateMultiplier>0.1</BladderRateMultiplier>
+			</statOffsets>
+		</value>
+	</Operation>
+
+</Patch>

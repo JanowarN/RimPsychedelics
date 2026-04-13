@@ -12,7 +12,7 @@
   <ThingDef ParentName="DeciduousTreeBase">
     <defName>RP_Plant_TreeSassafras</defName>
     <label>sassafras tree</label>
-    <description>A medium-sized deciduous tree with distinctive mitten-shaped leaves and aromatic bark. The roots and bark contain safrole, a volatile oil that serves as the precursor to fluff. The oil is best extracted from the stump after felling.\n\nSassafras trees grow naturally in temperate and tropical forests. They cannot be planted by colonists.</description>
+    <description>A medium-sized deciduous hardwood tree that grows naturally in temperate and tropical forests. Its wood is strong and versitile, but most notably safrole oil can be extracted from it's roots after being cut down.</description>
     <graphicData>
       <texPath>Things/Plant/RP_TreeSassafras</texPath>
       <graphicClass>Graphic_Random</graphicClass>
@@ -45,7 +45,7 @@
   <ThingDef ParentName="StumpBase">
     <defName>RP_ChoppedStumpSassafras</defName>
     <label>chopped sassafras stump</label>
-    <description>The fresh stump of a felled sassafras tree. The exposed roots and inner bark are rich with safrole oil, which can be carefully extracted. If left unattended, the volatile oil evaporates quickly and the stump becomes worthless.\n\nExtract the safrole before the stump deteriorates. Smashing the stump yields only wood.</description>
+    <description>The fresh stump of a felled sassafras tree. If extracted quickly, can yield safrole oil from the roots. Safrole extraction renders any wood from this stump unusable as a building material.</description>
     <graphicData>
       <texPath>Things/Plant/RP_StumpSassafras</texPath>
       <graphicClass>Graphic_Random</graphicClass>

@@ -584,7 +584,7 @@
   <ThingDef ParentName="MakeableDrugBase">
     <defName>RP_DriedMindcap</defName>
     <label>dried mindcap</label>
-    <description>Placeholder description for RP_DriedMindcap drug item.</description>
+    <description>A dried mushroom with blue veins and purple tinted flesh used as a powerful psychedelic across many worlds by people without the means to access more designer substances, or by those looking for a more "authentic" natural experience. Mindcap trips can be shorter and rougher around the edges, but are no less intense than more refined psychedelics like LYS. Subjective effects include open and closed-eye visuals, altered preception, enhanced introspection, and overall intense experiences. Trace toxins not completely broken down during the drying process tend to cause nausea.</description>
     <graphicData>
       <texPath>Things/Item/Drug/RP_DriedMindcap</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>

@@ -14,7 +14,7 @@
   <ThingDef ParentName="PlantBase">
     <defName>RP_Plant_MindcapMushroom</defName>
     <label>mindcap mushroom</label>
-    <description>A squat, luminous mushroom with a cap that seems to pulse faintly in the dark. The mindcap contains potent psychoactive alkaloids throughout its body. Raw consumption causes severe sickness in both humans and animals. When carefully dried, the alkaloids stabilize into a powerful psychedelic.\n\nMindcap mushrooms require darkness to grow and will die if exposed to sustained light.</description>
+    <description>An unassuming campanulate-capped mushroom that grows in clusteres, the mindcap is a natural source of potent psychoactive alkaloids. Raw consumption causes severe sickness in both humans and animals, but when carefully dried, toxins break down and the alkaloids stabilize into a powerful psychedelic.\n\nMindcap mushrooms require darkness to grow and will die if exposed to sustained light.</description>
     <statBases>
       <MaxHitPoints>85</MaxHitPoints>
       <Nutrition>0.18</Nutrition>

@@ -15,8 +15,8 @@
 
   <ThingDef ParentName="PlantBase">
     <defName>RP_Plant_Ergo</defName>
-    <label>ergo</label>
-    <description>A tall, grain-like plant with dark fungal pods clustered along its stalk. The pods contain volatile ergot alkaloids — the precursor to LYS. The stalks and leaves are harmless, but the harvested pods cause severe sickness if consumed raw.\n\nErgo is demanding to cultivate, requiring fertile soil and a skilled grower. Animals will happily eat the plant, destroying a slow and valuable crop.</description>
+    <label>ergo plant</label>
+    <description>A half fungus/half grain genetically engineered to produce Ergo, a fleshy fungal pod that can be refined into LYS using less sophisticated methods than total synthesis from scratch.</description>
     <statBases>
       <MaxHitPoints>85</MaxHitPoints>
       <Nutrition>0.2</Nutrition>

@@ -14,8 +14,8 @@
        ============================================================ -->
   <ThingDef ParentName="ResourceBase">
     <defName>RP_MindcapMushroom</defName>
-    <label>raw mindcap mushroom</label>
-    <description>A freshly harvested mindcap mushroom, still faintly luminous. The raw flesh is saturated with unstable psychoactive compounds that cause violent sickness when consumed. The mushrooms must be carefully dried before the alkaloids become usable.\n\nPerishable. Keep refrigerated or process quickly.</description>
+    <label>raw mindcap</label>
+    <description>Freshly harvested mindcap mushroom. The raw flesh is saturated with unstable compounds that cause violent sickness when consumed. The mushrooms must be carefully dried before they can be consumed safely.</description>
     <graphicData>
       <texPath>Things/Item/Resource/RP_MindcapMushroom</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -61,7 +61,7 @@
   <ThingDef ParentName="ResourceBase">
     <defName>RP_Ergo</defName>
     <label>ergo</label>
-    <description>Dark, wrinkled fungal pods harvested from the ergo plant. They contain volatile ergot alkaloids — the raw precursor to LYS. Consuming the pods raw causes severe, incapacitating sickness.\n\nThe alkaloids are volatile but preserved somewhat within the pod. Store in a cool area and process before they degrade.</description>
+    <description>Dark, wrinkled fungal pods harvested from the ergo plant. They contain the volatile organic compounds needed to produce LYS. Consuming the pods raw causes severe, incapacitating sickness.</description>
     <graphicData>
       <texPath>Things/Item/Resource/RP_Ergo</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>
@@ -107,7 +107,7 @@
   <ThingDef ParentName="ResourceBase">
     <defName>RP_Safrole</defName>
     <label>safrole</label>
-    <description>A pungent, oily extract from sassafras root bark. Safrole is the key precursor in the synthesis of fluff. The oil is volatile and degrades over time — process it before it loses potency.\n\nNot edible. Has no nutritional value and smells like root beer left in the sun too long.</description>
+    <description>A pungent, oily extract from sassafras root bark. Has no nutritional value and smells like root beer left in the sun too long, but a key precursor in the synthesis of fluff.</description>
     <graphicData>
       <texPath>Things/Item/Resource/RP_Safrole</texPath>
       <graphicClass>Graphic_StackCount</graphicClass>

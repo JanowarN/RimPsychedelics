@@ -29,37 +29,54 @@
   <ResearchProjectDef>
     <defName>RP_MindcapPreparation</defName>
     <label>mindcap preparation</label>
-    <description>Study the mindcap mushroom and develop a method for drying the raw flesh to neutralize the natural toxins while preserving psychoactive compounds. This simple preparation technique requires no advanced equipment — just patience, heat, and a steady hand.</description>
+    <description>Dry raw mindcap mushrooms to neutralize their natural toxins while preserving psychoactive compounds. Mindcap is a powerful psychedelic capable of creating life-altering experiences.</description>
     <baseCost>600</baseCost>
     <techLevel>Neolithic</techLevel>
     <tab>RP_ResearchTab</tab>
     <researchViewX>0.00</researchViewX>
-    <researchViewY>0.00</researchViewY>
+    <researchViewY>2.00</researchViewY>
   </ResearchProjectDef>
 
   <!-- ============================================================
-       2. LYS SYNTHESIS
-       Industrial tier. Prerequisite: DrugProduction.
-       Unlocks:
+       2. ERGO CULTIVATION
+       Neolithic tier. No prerequisites. Unlocks:
        - Sowing RP_Plant_Ergo
+       Required by: RP_LYSSynthesis (alongside DrugProduction).
+       ============================================================ -->
+  <ResearchProjectDef>
+    <defName>RP_ErgoCultivation</defName>
+    <label>ergo cultivation</label>
+    <description>Cultivate the bioengineered ergo plant. Ergo pods are the key precursor for synthesizing LYS.</description>
+    <baseCost>800</baseCost>
+    <techLevel>Neolithic</techLevel>
+    <tab>RP_ResearchTab</tab>
+    <researchViewX>0.00</researchViewX>
+    <researchViewY>3.00</researchViewY>
+  </ResearchProjectDef>
+
+  <!-- ============================================================
+       3. LYS SYNTHESIS
+       Industrial tier. Prerequisites: DrugProduction + RP_ErgoCultivation.
+       Unlocks:
        - Recipe: synthesize LYS
        ============================================================ -->
   <ResearchProjectDef>
     <defName>RP_LYSSynthesis</defName>
     <label>LYS synthesis</label>
-    <description>Develop the chemical process for synthesizing LYS from the ergoloids in ergo pods and neutroamine. The procedure is delicate and demanding, requiring a skilled chemist and a properly equipped drug lab. The result is one of the most effective psychedelics in the known verse.</description>
+    <description>Synthesize LYS from the ergoloids in ergo pods and neutroamine. Requiring a skilled chemist and a properly equipped drug lab, the result is one of the most effective psychedelics in the known verse.</description>
     <baseCost>4000</baseCost>
     <techLevel>Industrial</techLevel>
     <tab>RP_ResearchTab</tab>
     <prerequisites>
       <li>DrugProduction</li>
+      <li>RP_ErgoCultivation</li>
     </prerequisites>
     <researchViewX>2.00</researchViewX>
-    <researchViewY>-0.50</researchViewY>
+    <researchViewY>3.00</researchViewY>
   </ResearchProjectDef>
 
   <!-- ============================================================
-       3. FLUFF SYNTHESIS
+       4. FLUFF SYNTHESIS
        Industrial tier. Prerequisite: DrugProduction.
        Unlocks:
        - Recipe: synthesize fluff
@@ -69,7 +86,7 @@
   <ResearchProjectDef>
     <defName>RP_FluffSynthesis</defName>
     <label>fluff synthesis</label>
-    <description>Learn to convert safrole oil into fluff, a gentle empathogenic psychedelic. The chemical process is straightforward with the right precursors, requiring only basic intellectual aptitude and a drug lab.</description>
+    <description>Synthesize fluff from safrole oil. Fluff is a non-addictive empathogenic drug that provides large mood boosts and analgesic effects, but with a harsh backlash the day after.</description>
     <baseCost>1000</baseCost>
     <techLevel>Industrial</techLevel>
     <tab>RP_ResearchTab</tab>
@@ -77,7 +94,7 @@
       <li>DrugProduction</li>
     </prerequisites>
     <researchViewX>2.00</researchViewX>
-    <researchViewY>0.50</researchViewY>
+    <researchViewY>2.00</researchViewY>
   </ResearchProjectDef>
 
 </Defs>

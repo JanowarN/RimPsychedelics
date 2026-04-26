@@ -25,10 +25,10 @@
       <Nutrition>1.25</Nutrition>
     </statBases>
     <plant>
-      <growDays>30</growDays>
+      <growDays>28</growDays>
       <leaflessGraphicPath>Things/Plant/RP_TreeSassafras_Leafless</leaflessGraphicPath>
-      <harvestWork>550</harvestWork>
-      <harvestYield>25</harvestYield>
+      <harvestWork>1000</harvestWork>
+      <harvestYield>32</harvestYield>
       <choppedThingDef>RP_ChoppedStumpSassafras</choppedThingDef>
       <visualSizeRange>1.3~2.8</visualSizeRange>
       <topWindExposure>0.25</topWindExposure>

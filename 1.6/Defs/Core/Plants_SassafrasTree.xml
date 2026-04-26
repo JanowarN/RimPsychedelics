@@ -26,6 +26,7 @@
     </statBases>
     <plant>
       <growDays>30</growDays>
+      <leaflessGraphicPath>Things/Plant/RP_TreeSassafras_Leafless</leaflessGraphicPath>
       <harvestWork>550</harvestWork>
       <harvestYield>25</harvestYield>
       <choppedThingDef>RP_ChoppedStumpSassafras</choppedThingDef>

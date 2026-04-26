@@ -27,6 +27,7 @@
       <Flammability>1.0</Flammability>
       <MaxHitPoints>60</MaxHitPoints>
       <DeteriorationRate>6</DeteriorationRate>
+      <Nutrition>0.05</Nutrition>
     </statBases>
     <thingCategories>
       <li>PlantMatter</li>
@@ -36,7 +37,6 @@
       <preferability>DesperateOnly</preferability>
       <foodType>Plant</foodType>
       <baseIngestTicks>180</baseIngestTicks>
-      <nutrition>0.05</nutrition>
       <outcomeDoers>
         <li Class="IngestionOutcomeDoer_GiveHediff">
           <hediffDef>RP_RawPrecursorSickness</hediffDef>
@@ -47,7 +47,7 @@
     <comps>
       <li Class="CompProperties_Rottable">
         <daysToRotStart>10</daysToRotStart>
-        <rotDestroySpeedFactor>1</rotDestroySpeedFactor>
+        <rotDestroys>true</rotDestroys>
       </li>
     </comps>
   </ThingDef>
@@ -73,6 +73,7 @@
       <Flammability>1.0</Flammability>
       <MaxHitPoints>60</MaxHitPoints>
       <DeteriorationRate>4</DeteriorationRate>
+      <Nutrition>0.02</Nutrition>
     </statBases>
     <thingCategories>
       <li>PlantMatter</li>
@@ -82,7 +83,6 @@
       <preferability>DesperateOnly</preferability>
       <foodType>Plant</foodType>
       <baseIngestTicks>100</baseIngestTicks>
-      <nutrition>0.02</nutrition>
       <outcomeDoers>
         <li Class="IngestionOutcomeDoer_GiveHediff">
           <hediffDef>RP_RawPrecursorSickness</hediffDef>
@@ -93,7 +93,7 @@
     <comps>
       <li Class="CompProperties_Rottable">
         <daysToRotStart>30</daysToRotStart>
-        <rotDestroySpeedFactor>1</rotDestroySpeedFactor>
+        <rotDestroys>true</rotDestroys>
       </li>
     </comps>
   </ThingDef>
@@ -127,7 +127,7 @@
     <comps>
       <li Class="CompProperties_Rottable">
         <daysToRotStart>30</daysToRotStart>
-        <rotDestroySpeedFactor>1</rotDestroySpeedFactor>
+        <rotDestroys>true</rotDestroys>
       </li>
     </comps>
   </ThingDef>

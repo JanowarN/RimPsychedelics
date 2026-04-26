@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+
+	<!-- ============================================================
+	     Alpha Biomes Compatibility
+	     Sprinkles sassafras trees into compatible Alpha Biomes
+	     biomes. The entire sequence is gated by PatchOperationConditional —
+	     it checks for the existence of an Alpha Biomes BiomeDef in the
+	     loaded def database, which is only present when Alpha Biomes
+	     is active. Skipped silently otherwise.
+	     ============================================================ -->
+
+	<Operation Class="PatchOperationConditional">
+		<xpath>/Defs/BiomeDef[defName="AB_IdyllicMeadows"]</xpath>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/BiomeDef[defName = "AB_IdyllicMeadows"]/wildPlants</xpath>
+					<value>
+						<RP_Plant_TreeSassafras>0.02</RP_Plant_TreeSassafras>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/BiomeDef[defName = "AB_TarPits"]/wildPlants</xpath>
+					<value>
+						<RP_Plant_TreeSassafras>0.01</RP_Plant_TreeSassafras>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/BiomeDef[defName = "AB_MiasmicMangrove"]/wildPlants</xpath>
+					<value>
+						<RP_Plant_TreeSassafras>0.02</RP_Plant_TreeSassafras>
+					</value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/BiomeDef[defName = "AB_FeraliskInfestedJungle"]/wildPlants</xpath>
+					<value>
+						<RP_Plant_TreeSassafras>0.01</RP_Plant_TreeSassafras>
+					</value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+</Patch>

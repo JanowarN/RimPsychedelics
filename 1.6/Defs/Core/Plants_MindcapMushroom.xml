@@ -38,6 +38,7 @@
     </ingestible>
     <plant>
       <growDays>8</growDays>
+      <immatureGraphicPath>Things/Plant/RP_MindcapMushroom_Immature</immatureGraphicPath>
       <fertilitySensitivity>0.3</fertilitySensitivity>
       <harvestYield>2</harvestYield>
       <harvestedThingDef>RP_MindcapMushroom</harvestedThingDef>

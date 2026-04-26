@@ -37,12 +37,12 @@
 
   <!-- ============================================================
        CHOPPED SASSAFRAS STUMP
-       Extends StumpBase. High deterioration rate (50).
+       Extends StumpChoppedBase. High deterioration rate (50).
        Harvestable for safrole (yield 12).
        Smashing the stump yields wood, not safrole.
        ============================================================ -->
 
-  <ThingDef ParentName="StumpBase">
+  <ThingDef ParentName="StumpChoppedBase">
     <defName>RP_ChoppedStumpSassafras</defName>
     <label>chopped sassafras stump</label>
     <description>The fresh stump of a felled sassafras tree. If extracted quickly, can yield safrole oil from the roots. Safrole extraction renders any wood from this stump unusable as a building material.</description>

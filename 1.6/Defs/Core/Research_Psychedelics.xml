@@ -9,7 +9,7 @@
 
   <ResearchTabDef>
     <defName>RP_ResearchTab</defName>
-    <label>psychedelics</label>
+    <label>Psychedelic Drugs</label>
   </ResearchTabDef>
 
   <!-- ============================================================
@@ -29,7 +29,7 @@
   <ResearchProjectDef>
     <defName>RP_MindcapPreparation</defName>
     <label>mindcap preparation</label>
-    <description>Study the mindcap mushroom and develop a method for drying the raw flesh to stabilize its psychoactive compounds. This simple preparation technique requires no advanced equipment — just patience, heat, and a steady hand.</description>
+    <description>Study the mindcap mushroom and develop a method for drying the raw flesh to neutralize the natural toxins while preserving psychoactive compounds. This simple preparation technique requires no advanced equipment — just patience, heat, and a steady hand.</description>
     <baseCost>600</baseCost>
     <techLevel>Neolithic</techLevel>
     <tab>RP_ResearchTab</tab>
@@ -47,7 +47,7 @@
   <ResearchProjectDef>
     <defName>RP_LYSSynthesis</defName>
     <label>LYS synthesis</label>
-    <description>Develop the chemical process for synthesizing LYS from ergot alkaloids and neutroamine. The procedure is delicate and demanding, requiring a skilled chemist and a properly equipped drug lab. The result is the most potent psychedelic known to the Rim.</description>
+    <description>Develop the chemical process for synthesizing LYS from the ergoloids in ergo pods and neutroamine. The procedure is delicate and demanding, requiring a skilled chemist and a properly equipped drug lab. The result is one of the most effective psychedelics in the known verse.</description>
     <baseCost>4000</baseCost>
     <techLevel>Industrial</techLevel>
     <tab>RP_ResearchTab</tab>
@@ -69,7 +69,7 @@
   <ResearchProjectDef>
     <defName>RP_FluffSynthesis</defName>
     <label>fluff synthesis</label>
-    <description>Learn to convert safrole oil into fluff, a gentle empathogenic psychedelic. The chemical process is straightforward compared to LYS synthesis, requiring only basic intellectual aptitude and a drug lab.</description>
+    <description>Learn to convert safrole oil into fluff, a gentle empathogenic psychedelic. The chemical process is straightforward with the right precursors, requiring only basic intellectual aptitude and a drug lab.</description>
     <baseCost>1000</baseCost>
     <techLevel>Industrial</techLevel>
     <tab>RP_ResearchTab</tab>

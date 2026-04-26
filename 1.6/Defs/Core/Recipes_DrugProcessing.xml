@@ -10,15 +10,15 @@
 
   <!-- ============================================================
        1. DRY MINDCAP MUSHROOMS
-       3 raw mushrooms → 1 dried mindcap.
+       3 raw mushrooms → 1 mindcap.
        Available at campfire and drug lab.
        Research: RP_MindcapPreparation (Neolithic, 600).
        No skill requirement beyond plant sow skill.
        ============================================================ -->
   <RecipeDef>
-    <defName>RP_Make_DriedMindcap</defName>
+    <defName>RP_Make_Mindcap</defName>
     <label>dry mindcap mushrooms</label>
-    <description>Carefully dry raw mindcap mushrooms to stabilize the psychoactive alkaloids. The drying process concentrates the compounds into a usable form.</description>
+    <description>Carefully dry raw mindcap mushrooms to make them safe to ingest.</description>
     <jobString>Drying mindcap mushrooms.</jobString>
     <workAmount>200</workAmount>
     <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
@@ -36,7 +36,7 @@
       </li>
     </ingredients>
     <products>
-      <RP_DriedMindcap>1</RP_DriedMindcap>
+      <RP_Mindcap>1</RP_Mindcap>
     </products>
     <fixedIngredientFilter>
       <thingDefs>
@@ -60,7 +60,7 @@
   <RecipeDef>
     <defName>RP_Make_LYS</defName>
     <label>synthesize LYS</label>
-    <description>Synthesize LYS from ergot alkaloids and neutroamine through a precise chemical process. Requires advanced knowledge and careful lab work.</description>
+    <description>Synthesize a batch of LYS by extracting ergoloid compounds from ergo pods using neutroamine as a reagent. Requires advanced knowledge and careful lab work.</description>
     <jobString>Synthesizing LYS.</jobString>
     <workAmount>600</workAmount>
     <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>

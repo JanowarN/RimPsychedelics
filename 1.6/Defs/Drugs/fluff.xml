@@ -92,14 +92,14 @@
     <stages>
       <!-- Waiting -->
       <li>
-        <label>waiting for fluff</label>
-        <description>Placeholder description for RP_FluffComeUpMood waiting stage.</description>
+        <label>dosed</label>
+        <description>Waiting...</description>
         <baseMoodEffect>0</baseMoodEffect>
       </li>
       <!-- Rising -->
       <li>
-        <label>fluff rising</label>
-        <description>Placeholder description for RP_FluffComeUpMood rising stage.</description>
+        <label>Fluff onset</label>
+        <description>This feels a little weird...</description>
         <baseMoodEffect>-1</baseMoodEffect>
       </li>
     </stages>
@@ -203,20 +203,20 @@
     <stages>
       <!-- Fading -->
       <li>
-        <label>fluff fading</label>
-        <description>Placeholder description for RP_FluffTripGoodMood fading stage.</description>
+        <label>Coming down</label>
+        <description>Ah, this is so nice.</description>
         <baseMoodEffect>15</baseMoodEffect>
       </li>
       <!-- Plateau -->
       <li>
-        <label>rolling on fluff</label>
-        <description>Placeholder description for RP_FluffTripGoodMood plateau stage.</description>
+        <label>Rolling on fluff</label>
+        <description>This feels amazing and everyone is so great!</description>
         <baseMoodEffect>28</baseMoodEffect>
       </li>
       <!-- Rolling -->
       <li>
-        <label>fluff rolling</label>
-        <description>Placeholder description for RP_FluffTripGoodMood rolling stage.</description>
+        <label>Rolling on fluff</label>
+        <description>EVERYTHING IS WONDERFUL!</description>
         <baseMoodEffect>35</baseMoodEffect>
       </li>
     </stages>
@@ -322,20 +322,20 @@
     <stages>
       <!-- Fading -->
       <li>
-        <label>bad fluff trip fading</label>
-        <description>Placeholder description for RP_FluffTripBadMood fading stage.</description>
+        <label>Coming down</label>
+        <description>It's starting to get better... slowly...</description>
         <baseMoodEffect>-8</baseMoodEffect>
       </li>
       <!-- Plateau -->
       <li>
-        <label>bad fluff trip</label>
-        <description>Placeholder description for RP_FluffTripBadMood plateau stage.</description>
+        <label>Rolling on fluff</label>
+        <description>Everything is too much and I want it to stop.</description>
         <baseMoodEffect>-10</baseMoodEffect>
       </li>
       <!-- Rolling -->
       <li>
-        <label>bad fluff trip rolling</label>
-        <description>Placeholder description for RP_FluffTripBadMood rolling stage.</description>
+        <label>Rolling on fluff</label>
+        <description>What's happening? This isn't right...</description>
         <baseMoodEffect>-6</baseMoodEffect>
       </li>
     </stages>
@@ -402,14 +402,14 @@
     <stages>
       <!-- Fading -->
       <li>
-        <label>fluff recovery</label>
-        <description>Placeholder description for RP_FluffRecoveryMood fading stage.</description>
+        <label>Fluff hangover</label>
+        <description>bleh.</description>
         <baseMoodEffect>-2</baseMoodEffect>
       </li>
       <!-- Drained -->
       <li>
-        <label>fluff drained</label>
-        <description>Placeholder description for RP_FluffRecoveryMood drained stage.</description>
+        <label>Fluff hangover</label>
+        <description>I feel like I've been run over.</description>
         <baseMoodEffect>-5</baseMoodEffect>
       </li>
     </stages>
@@ -531,20 +531,20 @@
     <stages>
       <!-- Above 0.70 (Rolling) -->
       <li>
-        <label>rolling on fluff</label>
-        <description>Placeholder description for RP_FluffGoodTripSocial Rolling stage.</description>
+        <label>Rolling on fluff</label>
+        <description>I love all of you so much.</description>
         <opinionOffset>40</opinionOffset>
       </li>
       <!-- Above 0.30 (Plateau) -->
       <li>
-        <label>fluff plateau</label>
-        <description>Placeholder description for RP_FluffGoodTripSocial Plateau stage.</description>
+        <label>Rolling on fluff</label>
+        <description>I love all of you so much.</description>
         <opinionOffset>40</opinionOffset>
       </li>
       <!-- Below 0.30 (Fading) -->
       <li>
-        <label>coming down from fluff</label>
-        <description>Placeholder description for RP_FluffGoodTripSocial Fading stage.</description>
+        <label>Rolling on fluff</label>
+        <description>I feel so close to everyone.</description>
         <opinionOffset>20</opinionOffset>
       </li>
     </stages>
@@ -566,23 +566,24 @@
       </li>
     </modExtensions>
     <stages>
-      <!-- Above 0.70 (Rolling) — no flat offset during peak -->
+      <!-- Above 0.70 (Rolling) — no flat offset during peak; hidden from social tab -->
       <li>
-        <label>bad fluff trip</label>
-        <description>Placeholder description for RP_FluffBadTripSocial Rolling stage.</description>
+        <label></label>
+        <description></description>
         <opinionOffset>0</opinionOffset>
+        <visible>false</visible>
       </li>
       <!-- Above 0.30 (Plateau) -->
       <li>
-        <label>bad fluff plateau</label>
-        <description>Placeholder description for RP_FluffBadTripSocial Plateau stage.</description>
-        <opinionOffset>-5</opinionOffset>
+        <label>Rolling too hard</label>
+        <description>I can't handle people right now.</description>
+        <opinionOffset>-10</opinionOffset>
       </li>
       <!-- Below 0.30 (Fading) -->
       <li>
-        <label>bad fluff fading</label>
-        <description>Placeholder description for RP_FluffBadTripSocial Fading stage.</description>
-        <opinionOffset>-3</opinionOffset>
+        <label>Rolling too hard</label>
+        <description>Other people are still a bit overwhelming.</description>
+        <opinionOffset>-5</opinionOffset>
       </li>
     </stages>
   </ThoughtDef>

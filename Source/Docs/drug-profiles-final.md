@@ -16,7 +16,7 @@ Per-drug reference cards containing all finalized parameter values. This is the 
 ## Table of Contents
 
 1. [LYS](#1-lys)
-2. [Dried Mindcap](#2-dried-mindcap)
+2. [Mindcap](#2-mindcap)
 3. [Fluff](#3-fluff)
 4. [Cross-Drug Comparison](#4-cross-drug-comparison)
 5. [Shared Systems](#5-shared-systems)
@@ -304,14 +304,14 @@ Three stages across ~3 days. Severity decays at −0.3333/day.
 
 ---
 
-## 2. Dried Mindcap
+## 2. Mindcap
 
 ### 2.1 ThingDef
 
 | Property | Value |
 |----------|-------|
-| defName | `RP_DriedMindcap` |
-| label | dried mindcap |
+| defName | `RP_Mindcap` |
+| label | mindcap |
 | techLevel | Neolithic |
 | drugCategory | Hard |
 | marketValue | 12 |
@@ -324,14 +324,14 @@ Three stages across ~3 days. Severity decays at −0.3333/day.
 ### 2.2 Production Chain
 
 ```
-RP_Plant_MindcapMushroom (grow) → RP_MindcapMushroom (harvest) → RP_DriedMindcap (dry)
+RP_Plant_MindcapMushroom (grow) → RP_MindcapMushroom (harvest) → RP_Mindcap (dry)
 ```
 
 | Stage | Details |
 |-------|---------|
 | Plant | `RP_Plant_MindcapMushroom` — growable mushroom. Grow days: 8. Fertility sensitivity: 30%. Yield: 2. Light requirement: Darkness. Sow tags: Ground, Hydroponic. Min sow skill: 4. |
 | Harvest | `RP_MindcapMushroom` — raw mushroom. Rottable. Ingestible (`DesperateOnly`) — causes `RP_RawPrecursorSickness`. |
-| Processing | 3 raw mushrooms → 1 dried mindcap. Campfire or drug lab. |
+| Processing | 3 raw mushrooms → 1 mindcap. Campfire or drug lab. |
 | Research | `RP_MindcapPreparation` — Neolithic tier, 600 cost, no prerequisites. |
 
 ### 2.3 Chemical Foundation
@@ -582,7 +582,7 @@ RP_Plant_TreeSassafras (grow/chop) → RP_ChoppedStumpSassafras (harvest) → RP
 | Stage | Details |
 |-------|---------|
 | Plant | `RP_Plant_TreeSassafras` — extends `DeciduousTreeBase`. Normal tree growth rules. Spawns in 7 biomes via XPath patches. `choppedThingDef` → `RP_ChoppedStumpSassafras`. |
-| Stump | `RP_ChoppedStumpSassafras` — extends `StumpBase`. Deterioration rate 50 (high). Harvestable for safrole. If smashed, yields wood not safrole. Yield: 12 safrole. |
+| Stump | `RP_ChoppedStumpSassafras` — extends `StumpChoppedBase`. Deterioration rate 50 (high). Harvestable for safrole. If smashed, yields wood not safrole. Yield: 12 safrole. |
 | Precursor | `RP_Safrole` — safrole oil. Rottable (30 days). |
 | Recipe | 2 Safrole → 1 Fluff. Drug lab only. (6 doses per tree.) |
 | Skill requirements | Intellectual 4 |

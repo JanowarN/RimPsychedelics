@@ -97,14 +97,14 @@
     <stages>
       <!-- Waiting -->
       <li>
-        <label>waiting for mindcap</label>
-        <description>Placeholder description for RP_MindcapComeUpMood waiting stage.</description>
+        <label>Dosed mindcap</label>
+        <description>I'm looking forward to this.</description>
         <baseMoodEffect>2</baseMoodEffect>
       </li>
       <!-- Hitting -->
       <li>
-        <label>mindcap hitting</label>
-        <description>Placeholder description for RP_MindcapComeUpMood hitting stage.</description>
+        <label>Coming up</label>
+        <description>I feel very sick and everything is moving.</description>
         <baseMoodEffect>-5</baseMoodEffect>
       </li>
     </stages>
@@ -129,7 +129,7 @@
         <severityPerDay>-3.4286</severityPerDay>
       </li>
       <li Class="RimPsychedelics.HediffCompProperties_TripResolution">
-        <drugDef>RP_DriedMindcap</drugDef>
+        <drugDef>RP_Mindcap</drugDef>
       </li>
     </comps>
     <stages>
@@ -247,26 +247,26 @@
     <stages>
       <!-- Fading -->
       <li>
-        <label>mindcap fading</label>
-        <description>Placeholder description for RP_MindcapTripGoodMood fading stage.</description>
+        <label>Coming down</label>
+        <description>Everything looks the same as before but it's like someone cleaned the glass I was looking through.</description>
         <baseMoodEffect>20</baseMoodEffect>
       </li>
       <!-- Easing -->
       <li>
-        <label>mindcap easing</label>
-        <description>Placeholder description for RP_MindcapTripGoodMood easing stage.</description>
+        <label>Tripping on mindcap</label>
+        <description>I feel like I just got back from somewhere I'll never be able to fully explain.</description>
         <baseMoodEffect>25</baseMoodEffect>
       </li>
       <!-- Plateau -->
       <li>
-        <label>mindcap plateau</label>
-        <description>Placeholder description for RP_MindcapTripGoodMood plateau stage.</description>
+        <label>Tripping on mindcap</label>
+        <description>I think I finally understand what silence is trying to say.</description>
         <baseMoodEffect>2</baseMoodEffect>
       </li>
       <!-- Peaking -->
       <li>
-        <label>mindcap peaking</label>
-        <description>Placeholder description for RP_MindcapTripGoodMood peaking stage.</description>
+        <label>Tripping on mindcap</label>
+        <description>I see the music and hear the colors.</description>
         <baseMoodEffect>0</baseMoodEffect>
       </li>
     </stages>
@@ -290,7 +290,7 @@
         <severityPerDay>-3.4286</severityPerDay>
       </li>
       <li Class="RimPsychedelics.HediffCompProperties_TripResolution">
-        <drugDef>RP_DriedMindcap</drugDef>
+        <drugDef>RP_Mindcap</drugDef>
       </li>
     </comps>
     <stages>
@@ -408,26 +408,26 @@
     <stages>
       <!-- Fading -->
       <li>
-        <label>bad mindcap trip fading</label>
-        <description>Placeholder description for RP_MindcapTripBadMood fading stage.</description>
+        <label>Coming down</label>
+        <description>What I experienced shook me.</description>
         <baseMoodEffect>-15</baseMoodEffect>
       </li>
       <!-- Easing -->
       <li>
-        <label>bad mindcap trip</label>
-        <description>Placeholder description for RP_MindcapTripBadMood easing stage.</description>
+        <label>Tripping on mindcap</label>
+        <description>I'm... not okay...</description>
         <baseMoodEffect>-18</baseMoodEffect>
       </li>
       <!-- Plateau -->
       <li>
-        <label>bad mindcap trip plateau</label>
-        <description>Placeholder description for RP_MindcapTripBadMood plateau stage.</description>
+        <label>Tripping on mindcap</label>
+        <description>Something is very wrong and I think it's always been wrong and I just didn't notice until now.</description>
         <baseMoodEffect>-5</baseMoodEffect>
       </li>
       <!-- Peaking -->
       <li>
-        <label>bad mindcap trip peaking</label>
-        <description>Placeholder description for RP_MindcapTripBadMood peaking stage.</description>
+        <label>Tripping on mindcap</label>
+        <description>I just realized my entire personality is a costume I forgot I put on.</description>
         <baseMoodEffect>0</baseMoodEffect>
       </li>
     </stages>
@@ -486,20 +486,20 @@
     <stages>
       <!-- Fading -->
       <li>
-        <label>mindcap afterglow fading</label>
-        <description>Placeholder description for RP_MindcapAfterglowMood fading stage.</description>
+        <label>Good mindcap trip</label>
+        <description>(:</description>
         <baseMoodEffect>5</baseMoodEffect>
       </li>
       <!-- Settling -->
       <li>
-        <label>mindcap afterglow</label>
-        <description>Placeholder description for RP_MindcapAfterglowMood settling stage.</description>
+        <label>Good mindcap trip</label>
+        <description>This is so nice.</description>
         <baseMoodEffect>8</baseMoodEffect>
       </li>
       <!-- Glowing -->
       <li>
-        <label>mindcap afterglow glowing</label>
-        <description>Placeholder description for RP_MindcapAfterglowMood glowing stage.</description>
+        <label>Good mindcap trip</label>
+        <description>That was amazing.</description>
         <baseMoodEffect>10</baseMoodEffect>
       </li>
     </stages>
@@ -558,20 +558,20 @@
     <stages>
       <!-- Fading -->
       <li>
-        <label>mindcap disturbed fading</label>
-        <description>Placeholder description for RP_MindcapDisturbedMood fading stage.</description>
+        <label>Bad mindcap trip</label>
+        <description>I think I'm going to be okay.</description>
         <baseMoodEffect>-2</baseMoodEffect>
       </li>
       <!-- Unsettled -->
       <li>
-        <label>mindcap disturbed</label>
-        <description>Placeholder description for RP_MindcapDisturbedMood unsettled stage.</description>
+        <label>Bad mindcap trip</label>
+        <description>Things are getting back to normal, but I'm still paranoid.</description>
         <baseMoodEffect>-6</baseMoodEffect>
       </li>
       <!-- Shaken -->
       <li>
-        <label>mindcap shaken</label>
-        <description>Placeholder description for RP_MindcapDisturbedMood shaken stage.</description>
+        <label>Bad mindcap trip</label>
+        <description>I feel isolated and shaken.</description>
         <baseMoodEffect>-10</baseMoodEffect>
       </li>
     </stages>
@@ -582,8 +582,8 @@
        ============================================================ -->
 
   <ThingDef ParentName="MakeableDrugBase">
-    <defName>RP_DriedMindcap</defName>
-    <label>dried mindcap</label>
+    <defName>RP_Mindcap</defName>
+    <label>mindcap</label>
     <description>A dried mushroom with blue veins and purple tinted flesh used as a powerful psychedelic across many worlds by people without the means to access more designer substances, or by those looking for a more "authentic" natural experience. Mindcap trips can be shorter and rougher around the edges, but are no less intense than more refined psychedelics like LYS. Subjective effects include open and closed-eye visuals, altered preception, enhanced introspection, and overall intense experiences. Trace toxins not completely broken down during the drying process tend to cause nausea.</description>
     <graphicData>
       <texPath>Things/Item/Drug/RP_DriedMindcap</texPath>
@@ -676,6 +676,8 @@
             <selectionWeight>1.2</selectionWeight>
             <goodTripBias>0.7</goodTripBias>
             <badTripBias>-0.7</badTripBias>
+            <higherMessage>[PAWN_nameDef] has started to look on the brighter side of life as a result of a [DRUG_label] trip.</higherMessage>
+            <lowerMessage>[PAWN_nameDef] sees the world a little darker after an intense [DRUG_label] experience.</lowerMessage>
           </li>
           <li>
             <traitDef>Nerves</traitDef>
@@ -684,6 +686,8 @@
             <selectionWeight>1.0</selectionWeight>
             <goodTripBias>0.6</goodTripBias>
             <badTripBias>-0.7</badTripBias>
+            <higherMessage>A [DRUG_label] trip led to [PAWN_nameDef] having a newfound will to push through under stress.</higherMessage>
+            <lowerMessage>[PAWN_nameDef]'s self-confidence was shaken by an experience on [DRUG_label], making stress harder to manage.</lowerMessage>
           </li>
           <li>
             <traitDef>Neurotic</traitDef>
@@ -692,6 +696,8 @@
             <selectionWeight>0.6</selectionWeight>
             <goodTripBias>-0.7</goodTripBias>
             <badTripBias>0.5</badTripBias>
+            <higherMessage>A [DRUG_label] experience has left [PAWN_nameDef] with hightened anxiety if anything isn't fully squared away.</higherMessage>
+            <lowerMessage>[PAWN_nameDef] is learning to let go of trying to control [PAWN_possessive] surroundings as much after a [DRUG_label]-assisted reframing.</lowerMessage>
           </li>
           <li>
             <traitDef>DrugDesire</traitDef>
@@ -700,6 +706,8 @@
             <selectionWeight>0.5</selectionWeight>
             <goodTripBias>0.3</goodTripBias>
             <badTripBias>-0.8</badTripBias>
+            <higherMessage>[PAWN_nameDef] had an experience on [DRUG_label] that caused [PAWN_possessive] to want to explore altered states more.</higherMessage>
+            <lowerMessage>[PAWN_nameDef] had an experience on [DRUG_label] that caused [PAWN_possessive] to be less interested in future pharmacologically mediated mind states.</lowerMessage>
           </li>
           <li>
             <traitDef>PsychicSensitivity</traitDef>
@@ -708,6 +716,8 @@
             <selectionWeight>0.3</selectionWeight>
             <goodTripBias>0.4</goodTripBias>
             <badTripBias>0.0</badTripBias>
+            <higherMessage>[PAWN_nameDef] has permanently become more psychically sensitive after [PAWN_possessive] mind opened to new understanding of the connection of all things.</higherMessage>
+            <lowerMessage>[PAWN_nameDef] has become permanently more closed off psychically after having a visceral experience of dangerous psychic forces while on a [DRUG_label] trip.</lowerMessage>
           </li>
         </traitSpectrums>
 
@@ -719,6 +729,8 @@
             <selectionWeight>0.8</selectionWeight>
             <goodTripBias>1.0</goodTripBias>
             <badTripBias>-0.6</badTripBias>
+            <addedMessage>[PAWN_nameDef] had a profound experience understanding how they treat others, and has commited to being more [TRAIT_label].</addedMessage>
+            <removedMessage>After a [DRUG_label] experience, [PAWN_nameDef] is no longer sure if being so [TRAIT_label] is the best way to live.</removedMessage>
           </li>
           <li>
             <traitDef>Abrasive</traitDef>
@@ -726,6 +738,8 @@
             <selectionWeight>0.5</selectionWeight>
             <goodTripBias>-0.8</goodTripBias>
             <badTripBias>1.0</badTripBias>
+            <addedMessage>[PAWN_nameDef] has started to seem [TRAIT_label] after a [DRUG_label] trip shattered their perception of social niceties.</addedMessage>
+            <removedMessage>[PAWN_nameDef] had a profound experience understanding how they treat others, and will no longer be so [TRAIT_label].</removedMessage>
           </li>
           <li>
             <traitDef>Ascetic</traitDef>
@@ -733,6 +747,8 @@
             <selectionWeight>0.4</selectionWeight>
             <goodTripBias>0.8</goodTripBias>
             <badTripBias>0.4</badTripBias>
+            <addedMessage>After a revelation on [DRUG_label], [PAWN_nameDef] no longer sees the value in physical comforts, becoming [TRAIT_label].</addedMessage>
+            <removedMessage>A [DRUG_label] experience has led [PAWN_nameDef] to reconsider physical comforts, and [PAWN_possessive] is not longer [TRAIT_label].</removedMessage>
           </li>
         </traitStandalones>
 

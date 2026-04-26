@@ -10,7 +10,7 @@
        1. RAW MINDCAP MUSHROOM
        Harvested from RP_Plant_MindcapMushroom. Rottable (10 days).
        Ingestible (DesperateOnly) — causes RP_RawPrecursorSickness.
-       3 mushrooms → 1 dried mindcap.
+       3 mushrooms → 1 mindcap.
        ============================================================ -->
   <ThingDef ParentName="ResourceBase">
     <defName>RP_MindcapMushroom</defName>

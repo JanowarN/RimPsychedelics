@@ -124,20 +124,20 @@
     <stages>
       <!-- Waiting -->
       <li>
-        <label>waiting for LYS</label>
-        <description>Placeholder description for RP_LYSComeUpMood waiting stage.</description>
+        <label>Dosed LYS</label>
+        <description>I'm looking forward to this.</description>
         <baseMoodEffect>2</baseMoodEffect>
       </li>
       <!-- Unsettled -->
       <li>
-        <label>LYS unsettled</label>
-        <description>Placeholder description for RP_LYSComeUpMood unsettled stage.</description>
+        <label>LYS onset</label>
+        <description>My body feels weird and I'm a bit anxious.</description>
         <baseMoodEffect>-5</baseMoodEffect>
       </li>
       <!-- Ascending -->
       <li>
-        <label>LYS ascending</label>
-        <description>Placeholder description for RP_LYSComeUpMood ascending stage.</description>
+        <label>Coming up</label>
+        <description>I'll see you on the dark side of the moon.</description>
         <baseMoodEffect>-2</baseMoodEffect>
       </li>
     </stages>
@@ -277,26 +277,26 @@
     <stages>
       <!-- Fading -->
       <li>
-        <label>LYS fading</label>
-        <description>Placeholder description for RP_LYSTripGoodMood fading stage.</description>
+        <label>Coming down</label>
+        <description>Everything's as it should be.</description>
         <baseMoodEffect>25</baseMoodEffect>
       </li>
       <!-- Easing -->
       <li>
-        <label>LYS easing</label>
-        <description>Placeholder description for RP_LYSTripGoodMood easing stage.</description>
+        <label>Tripping on LYS</label>
+        <description>Oh... I'm a person again. That's kind of nice actually.</description>
         <baseMoodEffect>30</baseMoodEffect>
       </li>
       <!-- Plateau -->
       <li>
-        <label>LYS plateau</label>
-        <description>Placeholder description for RP_LYSTripGoodMood plateau stage.</description>
+        <label>Tripping on LYS</label>
+        <description>I can feel my thoughts before I think them, like waves forming before they break.</description>
         <baseMoodEffect>2</baseMoodEffect>
       </li>
       <!-- Peaking -->
       <li>
-        <label>LYS peaking</label>
-        <description>Placeholder description for RP_LYSTripGoodMood peaking stage.</description>
+        <label>Tripping on LYS</label>
+        <description>I'm not having an experience, I'm the experience that was pretending to be had by someone.</description>
         <baseMoodEffect>0</baseMoodEffect>
       </li>
     </stages>
@@ -436,26 +436,26 @@
     <stages>
       <!-- Fading -->
       <li>
-        <label>LYS bad trip fading</label>
-        <description>Placeholder description for RP_LYSTripBadMood fading stage.</description>
+        <label>Coming down</label>
+        <description>What I experienced shook me.</description>
         <baseMoodEffect>-10</baseMoodEffect>
       </li>
       <!-- Easing -->
       <li>
-        <label>LYS bad trip</label>
-        <description>Placeholder description for RP_LYSTripBadMood easing stage.</description>
+        <label>Tripping on LYS</label>
+        <description>I'm... not okay...</description>
         <baseMoodEffect>-12</baseMoodEffect>
       </li>
       <!-- Plateau -->
       <li>
-        <label>LYS bad trip plateau</label>
-        <description>Placeholder description for RP_LYSTripBadMood plateau stage.</description>
+        <label>Tripping on LYS</label>
+        <description>My body is doing things without asking me and I'm not sure it's mine anymore.</description>
         <baseMoodEffect>-3</baseMoodEffect>
       </li>
       <!-- Peaking -->
       <li>
-        <label>LYS bad trip peaking</label>
-        <description>Placeholder description for RP_LYSTripBadMood peaking stage.</description>
+        <label>Tripping on LYS</label>
+        <description>I'm not watching the room, the room is watching itself and I was never separate from it.</description>
         <baseMoodEffect>0</baseMoodEffect>
       </li>
     </stages>
@@ -514,20 +514,20 @@
     <stages>
       <!-- Fading -->
       <li>
-        <label>LYS afterglow fading</label>
-        <description>Placeholder description for RP_LYSAfterglowMood fading stage.</description>
+        <label>Good LYS trip</label>
+        <description>(:</description>
         <baseMoodEffect>5</baseMoodEffect>
       </li>
       <!-- Settling -->
       <li>
-        <label>LYS afterglow</label>
-        <description>Placeholder description for RP_LYSAfterglowMood settling stage.</description>
+        <label>Good LYS trip</label>
+        <description>This is lovely.</description>
         <baseMoodEffect>8</baseMoodEffect>
       </li>
       <!-- Glowing -->
       <li>
-        <label>LYS afterglow glowing</label>
-        <description>Placeholder description for RP_LYSAfterglowMood glowing stage.</description>
+        <label>Good LYS trip</label>
+        <description>That was beautiful.</description>
         <baseMoodEffect>12</baseMoodEffect>
       </li>
     </stages>
@@ -586,20 +586,20 @@
     <stages>
       <!-- Fading -->
       <li>
-        <label>LYS disturbed fading</label>
-        <description>Placeholder description for RP_LYSDisturbedMood fading stage.</description>
+        <label>Bad LYS trip</label>
+        <description>I think I'm going to be okay.</description>
         <baseMoodEffect>-1</baseMoodEffect>
       </li>
       <!-- Unsettled -->
       <li>
-        <label>LYS disturbed</label>
-        <description>Placeholder description for RP_LYSDisturbedMood unsettled stage.</description>
+        <label>Bad LYS trip</label>
+        <description>Everything is returning to normal, but I'm still anxious.</description>
         <baseMoodEffect>-5</baseMoodEffect>
       </li>
       <!-- Shaken -->
       <li>
-        <label>LYS shaken</label>
-        <description>Placeholder description for RP_LYSDisturbedMood shaken stage.</description>
+        <label>Bad LYS trip</label>
+        <description>I feel off and isolated.</description>
         <baseMoodEffect>-8</baseMoodEffect>
       </li>
     </stages>
@@ -712,6 +712,8 @@
             <selectionWeight>1.2</selectionWeight>
             <goodTripBias>0.7</goodTripBias>
             <badTripBias>-0.7</badTripBias>
+            <higherMessage>[PAWN_nameDef] has started to look on the brighter side of life as a result of a [DRUG_label] trip.</higherMessage>
+            <lowerMessage>[PAWN_nameDef] sees the world a little darker after an intense [DRUG_label] experience.</lowerMessage>
           </li>
           <li>
             <traitDef>Nerves</traitDef>
@@ -720,6 +722,8 @@
             <selectionWeight>1.0</selectionWeight>
             <goodTripBias>0.6</goodTripBias>
             <badTripBias>-0.7</badTripBias>
+            <higherMessage>A [DRUG_label] trip led to [PAWN_nameDef] having a newfound will to push through under stress.</higherMessage>
+            <lowerMessage>[PAWN_nameDef]'s self-confidence was shaken by an experience on [DRUG_label], making stress harder for [PAWN_objective] to manage.</lowerMessage>
           </li>
           <li>
             <traitDef>Neurotic</traitDef>
@@ -728,6 +732,8 @@
             <selectionWeight>0.6</selectionWeight>
             <goodTripBias>-0.7</goodTripBias>
             <badTripBias>0.5</badTripBias>
+            <higherMessage>A [DRUG_label] experience has left [PAWN_nameDef] with hightened anxiety if anything isn't fully squared away.</higherMessage>
+            <lowerMessage>[PAWN_nameDef] is learning to let go of trying to control [PAWN_possessive] surroundings as much after a [DRUG_label]-assisted reframing.</lowerMessage>
           </li>
           <li>
             <traitDef>DrugDesire</traitDef>
@@ -736,6 +742,8 @@
             <selectionWeight>0.5</selectionWeight>
             <goodTripBias>0.3</goodTripBias>
             <badTripBias>-0.8</badTripBias>
+            <higherMessage>[PAWN_nameDef] had an experience on [DRUG_label] that caused [PAWN_possessive] to want to explore altered states more.</higherMessage>
+            <lowerMessage>[PAWN_nameDef] had an experience on [DRUG_label] that caused [PAWN_possessive] to be less interested in future pharmacologically mediated mind states.</lowerMessage>
           </li>
           <li>
             <traitDef>PsychicSensitivity</traitDef>
@@ -744,11 +752,12 @@
             <selectionWeight>0.3</selectionWeight>
             <goodTripBias>0.4</goodTripBias>
             <badTripBias>0.0</badTripBias>
+            <higherMessage>[PAWN_nameDef] has permanently become more psychically sensitive after [PAWN_possessive] mind opened to new understanding of the connection of all things.</higherMessage>
+            <lowerMessage>[PAWN_nameDef] has become permanently more closed off psychically after having a visceral experience of dangerous psychic forces while on a [DRUG_label] trip.</lowerMessage>
           </li>
         </traitSpectrums>
 
-        <!-- Trait pool — Standalones
-             Messages DEFERRED — C# auto-generates defaults. -->
+        <!-- Trait pool — Standalones -->
         <traitStandalones>
           <li>
             <traitDef>Kind</traitDef>
@@ -756,6 +765,8 @@
             <selectionWeight>0.8</selectionWeight>
             <goodTripBias>1.0</goodTripBias>
             <badTripBias>-0.6</badTripBias>
+            <addedMessage>[PAWN_nameDef] had a profound experience understanding how they treat others, and has commited to being more [TRAIT_label].</addedMessage>
+            <removedMessage>After a [DRUG_label] experience, [PAWN_nameDef] is no longer sure if being so [TRAIT_label] is the best way to live.</removedMessage>
           </li>
           <li>
             <traitDef>Abrasive</traitDef>
@@ -763,6 +774,8 @@
             <selectionWeight>0.5</selectionWeight>
             <goodTripBias>-0.8</goodTripBias>
             <badTripBias>1.0</badTripBias>
+            <addedMessage>[PAWN_nameDef] has started to seem [TRAIT_label] after a [DRUG_label] trip shattered their perception of social niceties.</addedMessage>
+            <removedMessage>[PAWN_nameDef] had a profound experience understanding how they treat others, and will no longer be so [TRAIT_label].</removedMessage>
           </li>
           <li>
             <traitDef>Nudist</traitDef>
@@ -770,6 +783,8 @@
             <selectionWeight>0.15</selectionWeight>
             <goodTripBias>0.6</goodTripBias>
             <badTripBias>-0.3</badTripBias>
+            <addedMessage>[PAWN_nameDef] has decided to become [TRAIT_label] after a [DRUG_label] trip changed [PAWN_possessive] relationship to [PAWN_possessive] own body.</addedMessage>
+            <removedMessage>[PAWN_nameDef] has abandoned nudism after gaining new perspective while on [DRUG_label].</removedMessage>
           </li>
           <li>
             <traitDef>Ascetic</traitDef>
@@ -777,6 +792,8 @@
             <selectionWeight>0.4</selectionWeight>
             <goodTripBias>0.8</goodTripBias>
             <badTripBias>0.4</badTripBias>
+            <addedMessage>After a revelation on [DRUG_label], [PAWN_nameDef] has devoted themselves to a particular path of spiritual growth, and had become [TRAIT_label].</addedMessage>
+            <removedMessage>A [DRUG_label] experience has led [PAWN_nameDef] to reconsider physical comforts, and [PAWN_possessive] is not longer [TRAIT_label].</removedMessage>
           </li>
           <li>
             <traitDef>BodyPurist</traitDef>
@@ -784,6 +801,8 @@
             <selectionWeight>0.3</selectionWeight>
             <goodTripBias>0.7</goodTripBias>
             <badTripBias>0.6</badTripBias>
+            <addedMessage>[PAWN_nameDef] has developed a strong aversion to body modification after an experience on [DRUG_label].</addedMessage>
+            <removedMessage>[PAWN_nameDef]'s feelings on body modification have mellowed after a revelation on [DRUG_label].</removedMessage>
           </li>
           <li>
             <traitDef>Transhumanist</traitDef>
@@ -791,6 +810,8 @@
             <selectionWeight>0.3</selectionWeight>
             <goodTripBias>0.6</goodTripBias>
             <badTripBias>0.0</badTripBias>
+            <addedMessage>While tripping on [DRUG_label], [PAWN_nameDef] had a profound sense of the limitations of flesh and has become [TRAIT_label].</addedMessage>
+            <removedMessage>[PAWN_nameDef]'s conviction in their [TRAIT_label] beliefs was shaken by a [DRUG_label] trip.</removedMessage>
           </li>
         </traitStandalones>
 

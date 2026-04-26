@@ -47,5 +47,13 @@ namespace RimPsychedelics
         public float traitChangeChancePsychonaut;
         public List<TraitSpectrumEntry> traitSpectrums;
         public List<TraitStandaloneEntry> traitStandalones;
+
+        // --- Tale overrides (optional) ---
+        // When null, falls back to RP_TaleDefOf defaults (hallucinogen-flavored).
+        // Override per drug to give non-hallucinogenic drugs (empathogens,
+        // dissociatives, etc.) imagery that fits their experience profile.
+        public TaleDef goodTripTale;
+        public TaleDef badTripTale;
+        public TaleDef sharedTripTale;
     }
 }

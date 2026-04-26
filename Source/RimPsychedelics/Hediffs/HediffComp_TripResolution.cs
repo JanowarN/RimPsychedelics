@@ -162,8 +162,8 @@ namespace RimPsychedelics
             if (spawned)
             {
                 TaleDef taleDef = tripValence == TripValence.Good
-                    ? RP_TaleDefOf.RP_HadGoodTrip
-                    : RP_TaleDefOf.RP_HadBadTrip;
+                    ? (ext.goodTripTale ?? RP_TaleDefOf.RP_HadGoodTrip)
+                    : (ext.badTripTale ?? RP_TaleDefOf.RP_HadBadTrip);
                 TaleRecorder.RecordTale(taleDef, p, Props.drugDef);
             }
 

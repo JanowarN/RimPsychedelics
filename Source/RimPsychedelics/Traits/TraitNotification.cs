@@ -14,6 +14,7 @@ namespace RimPsychedelics
                 .Replace("[PAWN_nameDef]", pawn.LabelShort)
                 .Replace("[PAWN_pronoun]", SubjectPronoun(pawn))
                 .Replace("[PAWN_possessive]", PossessivePronoun(pawn))
+                .Replace("[PAWN_objective]", ObjectivePronoun(pawn))
                 .Replace("[DRUG_label]", drug.label)
                 .Replace("[TRAIT_label]", traitLabel);
         }
@@ -51,6 +52,16 @@ namespace RimPsychedelics
                 case Gender.Male: return "his";
                 case Gender.Female: return "her";
                 default: return "their";
+            }
+        }
+
+        private static string ObjectivePronoun(Pawn pawn)
+        {
+            switch (pawn.gender)
+            {
+                case Gender.Male: return "him";
+                case Gender.Female: return "her";
+                default: return "them";
             }
         }
     }

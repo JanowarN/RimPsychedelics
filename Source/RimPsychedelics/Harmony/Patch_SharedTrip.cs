@@ -26,7 +26,9 @@ namespace RimPsychedelics
             if (initiatorDrug == null || initiatorDrug != recipientDrug)
                 return;
 
-            TaleRecorder.RecordTale(RP_TaleDefOf.RP_SharedTrip, ___pawn, recipient, initiatorDrug);
+            PsychedelicDrugExtension ext = initiatorDrug.GetModExtension<PsychedelicDrugExtension>();
+            TaleDef taleDef = ext?.sharedTripTale ?? RP_TaleDefOf.RP_SharedTrip;
+            TaleRecorder.RecordTale(taleDef, ___pawn, recipient, initiatorDrug);
         }
 
         private static HediffComp_TripResolution FindTripResolutionComp(Pawn pawn)

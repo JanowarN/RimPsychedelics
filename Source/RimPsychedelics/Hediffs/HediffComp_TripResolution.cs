@@ -1,3 +1,4 @@
+using System;
 using RimWorld;
 using Verse;
 
@@ -5,6 +6,10 @@ namespace RimPsychedelics
 {
     public class HediffComp_TripResolution : HediffComp
     {
+        // Fired once per resolved trip (Tier 2+), after tales are recorded.
+        // Used by RimPsychedelics_Ideology to record per-pawn last-trip-tick.
+        public static event Action<Pawn> TripResolved;
+
         // Runtime fields — set by Hediff_PsychedelicComeUp at transition
         public bool wasZeroTolerance;
         public TripValence tripValence;
@@ -167,8 +172,9 @@ namespace RimPsychedelics
                 TaleRecorder.RecordTale(taleDef, p, Props.drugDef);
             }
 
-            // RP_RecentTrip thought — Tier 2+
-            p.needs?.mood?.thoughts?.memories?.TryGainMemory(RP_ThoughtDefOf.RP_RecentTrip);
+            // Notify integrations (e.g., Ideology mod's psychedelic-use tracker)
+            try { TripResolved?.Invoke(p); }
+            catch (Exception ex) { Log.Error($"[RimPsychedelics] TripResolved subscriber threw: {ex}"); }
         }
 
         public override void CompExposeData()

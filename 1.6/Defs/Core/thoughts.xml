@@ -2,26 +2,6 @@
 <Defs>
 
   <!-- ============================================================
-       RP_RecentTrip
-       Invisible 15-day memory thought applied at resolution.
-       Zero mood effect. Exists solely as a flag for the Ideology
-       Essential precept ("haven't tripped recently" checks for
-       the absence of this thought).
-       ============================================================ -->
-  <ThoughtDef>
-    <defName>RP_RecentTrip</defName>
-    <durationDays>15</durationDays>
-    <stackLimit>1</stackLimit>
-    <stages>
-      <li>
-        <label>recent trip</label>
-        <description>Placeholder description for RP_RecentTrip.</description>
-        <baseMoodEffect>0</baseMoodEffect>
-      </li>
-    </stages>
-  </ThoughtDef>
-
-  <!-- ============================================================
        RP_SharedTripMemory
        Social opinion thought. Active when a RP_SharedTrip tale
        exists between two pawns. Gated behind VSIE being active.

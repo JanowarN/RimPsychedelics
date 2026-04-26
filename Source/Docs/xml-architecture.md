@@ -4,7 +4,7 @@
 
 This document defines the structural patterns, wiring conventions, and design rationale for all XML defs in RimPsychedelics. It is the canonical reference for how defs relate to each other and why they are organized the way they are.
 
-**This is not a field reference.** For per-field documentation and modder-facing API, see the Modder Guide. For per-drug parameter values, see Drug Profiles. For how the C# classes consume these defs, see C# Architecture.
+**This is not a field reference.** For per-field documentation and modder-facing API, see `drug-profiles-final.md`. For per-drug parameter values, see `drug-profiles-final.md`. For how the C# classes consume these defs, see `cs-architecture.md`.
 
 ---
 
@@ -281,6 +281,20 @@ The normal curve parameters are required for every drug. Psychonaut parameters f
 
 When `canModifyTraits` is `false`, the trait lists may be omitted entirely. The C# skips all trait logic before reaching the lists.
 
+### 5.7 Tale Overrides (3 fields, optional)
+
+```xml
+<goodTripTale>RP_HadGoodTrip_Fluff</goodTripTale>
+<badTripTale>RP_HadBadTrip_Fluff</badTripTale>
+<sharedTripTale>RP_SharedTrip_Fluff</sharedTripTale>
+```
+
+Each field references a `TaleDef` and is optional. When omitted (null), the C# falls back to the default tales in `Source/RimPsychedelics/Core/RP_TaleDefOf.cs` — `RP_HadGoodTrip`, `RP_HadBadTrip`, and `RP_SharedTrip` respectively. Those defaults are written with hallucinogenic imagery (visual distortion, perceptual unmaking) and fit "classic psychedelic" experiences.
+
+Override these when a drug's experience profile doesn't fit the default imagery — e.g., empathogens (fluff) where the trip is emotional/social rather than visual, or a hypothetical dissociative where it's depersonalized. The custom tales should live in the drug's own XML file, not in `Defs/Core/Tales_Psychedelics.xml`.
+
+The override mechanism applies only to the three per-trip tales. `RP_FirstTrip`, `RP_GainedPsychonaut`, and the four trait-change tales remain shared across drugs and cannot be overridden — they describe pawn-life events or personality shifts, not the trip's qualitative texture.
+
 ---
 
 ## 6. Trait Entry XML Patterns
@@ -407,6 +421,41 @@ The ThoughtDef reads hediff state. The hediff is unaware of the ThoughtDef. This
 
 ---
 
+### 7.5 Mood ThoughtDefs (ThoughtWorker_Hediff)
+
+Mood effects are delivered via vanilla `ThoughtWorker_Hediff` ThoughtDefs rather than `baseMoodEffect` on hediff stages. This gives each mood stage its own label and description visible in the mood tooltip.
+
+#### Structure
+
+Each hediff with mood effects has a paired ThoughtDef placed directly below it in the drug XML file. The ThoughtDef uses vanilla `ThoughtWorker_Hediff` and references the hediff via the `<hediff>` field. Thought stages map 1:1 to hediff stages — same count, same order (ascending by minSeverity).
+
+#### Naming Convention
+
+| Def Type | Pattern | Example |
+|----------|---------|---------|
+| Mood ThoughtDef | `RP_{Drug}{Phase}Mood` | `RP_LYSComeUpMood` |
+
+#### Wiring Rules
+
+- Stage count must exactly match the hediff's stage count.
+- Stage ordering must match (ascending minSeverity).
+- Each thought stage carries `baseMoodEffect` and has its own `label` and `description`.
+- Stages where the hediff has no mood impact use `baseMoodEffect` of 0 (the thought still appears with a narrative label).
+- The mood ThoughtDef coexists with any social ThoughtDefs on the same hediff — they are independent systems.
+
+#### Cross-Reference Pattern
+
+```
+HediffDef
+  ↓ (paired, placed directly below in XML)
+ThoughtDef (mood)
+  └── hediff → HediffDef (read-only reference)
+```
+
+The hediff is unaware of the ThoughtDef. Mood ThoughtDefs can be added or removed without modifying hediff XML.
+
+---
+
 ## 8. Shared Defs (Cross-Drug)
 
 ### PsychedelicExperience Hediff
@@ -430,24 +479,25 @@ An invisible 15-day memory thought applied at resolution. Zero mood effect, `sta
 ### Canonical Structure
 
 ```
-Defs/
+1.6/Defs/
 ├── Drugs/
-│   ├── Drug_LYS.xml
-│   ├── Drug_Fluff.xml
-│   └── Drug_Mindcap.xml
+│   ├── LYS.xml
+│   ├── fluff.xml
+│   └── mindcap.xml
 ├── Core/
-│   ├── Hediffs_PsychedelicExperience.xml
-│   ├── Traits_Psychonaut.xml
+│   ├── hediffs.xml
+│   ├── traits.xml
 │   ├── Tales_Psychedelics.xml
-│   └── Thoughts_Trips.xml
-├── Plants/
+│   ├── thoughts.xml
 │   ├── Plants_Ergo.xml
+│   ├── Plants_MindcapMushroom.xml
 │   ├── Plants_SassafrasTree.xml
-│   └── Plants_MindcapMushroom.xml
-└── Production/
-    ├── Resources_Precursors.xml
-    ├── Recipes_DrugProcessing.xml
-    └── Research_Psychedelics.xml
+│   ├── Resources_Precursors.xml
+│   ├── Recipes_DrugProcessing.xml
+│   └── Research_Psychedelics.xml
+└── Patches/
+    ├── Patches_Biomes.xml
+    └── Patches_DubsBadHygiene.xml
 ```
 
 ### Per-Drug File Contents
@@ -458,22 +508,28 @@ Each file in `Defs/Drugs/` contains **everything** for that drug in this order:
 2. Dummy Addiction HediffDef
 3. Tolerance HediffDef
 4. ComeUp HediffDef
+   4a. ComeUp Mood ThoughtDef
 5. Good Peak HediffDef
+   5a. Good Peak Mood ThoughtDef
 6. Bad Peak HediffDef
+   6a. Bad Peak Mood ThoughtDef
 7. Positive Resolution HediffDef
+   7a. Positive Resolution Mood ThoughtDef
 8. Negative Resolution HediffDef (omit if same as positive)
+   8a. Negative Resolution Mood ThoughtDef
 9. Drug ThingDef with PsychedelicDrugExtension
 10. Social ThoughtDefs (if relevant)
+11. Drug-specific TaleDefs (if the drug overrides the default tales — see Section 5.7)
 
 **Rationale**: Everything needed to understand, debug, or tune a single drug is in one file. The ordering mirrors the lifecycle: chemical foundation → hediff chain (in temporal order) → drug def that wires it all together.
 
 ### Core Files
 
-`Defs/Core/` contains defs shared across all drugs:
-- `Hediffs_PsychedelicExperience.xml` — the hidden progression tracker
-- `Traits_Psychonaut.xml` — the Psychonaut TraitDef
+`1.6/Defs/Core/` contains defs shared across all drugs:
+- `hediffs.xml` — the hidden progression tracker
+- `traits.xml` — the Psychonaut TraitDef
 - `Tales_Psychedelics.xml` — all TaleDefs (trip tales, shared trip tales, trait change tales)
-- `Thoughts_Trips.xml` — RP_RecentTrip and any other shared thought defs
+- `thoughts.xml` — RP_RecentTrip and any other shared thought defs
 
 ### File Organization Does Not Affect Loading
 
@@ -494,6 +550,7 @@ RimWorld loads all XML defs from all files in the `Defs/` tree into a flat datab
 | Positive Resolution | `RP_{Name}Afterglow` (or drug-specific) | `RP_LYSAfterglow` |
 | Negative Resolution | `RP_{Name}Disturbed` (or drug-specific) | `RP_LYSDisturbed` |
 | Drug ThingDef | `RP_{Name}` | `RP_LYS` |
+| Mood ThoughtDef | `RP_{Name}{Phase}Mood` | `RP_LYSComeUpMood` |
 | Shared Hediff | `RP_PsychedelicExperience` | — |
 | Thought | `RP_RecentTrip` | — |
 
@@ -515,4 +572,6 @@ When adding or modifying a drug, verify:
 8. **No orphaned hediffs**: Every hediff def defined in the drug file is referenced by either the extension or the ChemicalDef.
 9. **Social ThoughtDef stage count**: If the drug has social opinion ThoughtDefs, verify that `stages` count = `severityThresholds` count + 1.
 10. **Social ThoughtDef hediff reference**: Each social ThoughtDef's `SocialOffsetExtension.hediffDef` must point to a hediff def that actually exists (typically the drug's good or bad peak hediff).
+11. **Mood ThoughtDef stage count**: Each mood ThoughtDef must have exactly as many stages as its paired HediffDef.
+12. **Mood ThoughtDef hediff reference**: Each mood ThoughtDef's `<hediff>` field must reference the correct HediffDef.
 

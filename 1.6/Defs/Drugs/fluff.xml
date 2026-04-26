@@ -503,6 +503,11 @@
         <!-- Trait modification — disabled for Fluff -->
         <canModifyTraits>false</canModifyTraits>
 
+        <!-- Tale overrides — empathogenic imagery instead of hallucinogenic default -->
+        <goodTripTale>RP_HadGoodTrip_Fluff</goodTripTale>
+        <badTripTale>RP_HadBadTrip_Fluff</badTripTale>
+        <sharedTripTale>RP_SharedTrip_Fluff</sharedTripTale>
+
       </li>
     </modExtensions>
   </ThingDef>
@@ -587,5 +592,64 @@
       </li>
     </stages>
   </ThoughtDef>
+
+  <!-- ============================================================
+       8. FLUFF-SPECIFIC TALES
+       Empathogenic imagery (closeness, emotional saturation,
+       social overflow) instead of the default hallucinogenic
+       tales. Wired via the extension's tale override fields.
+       Rule packs are placeholder pending creative writing pass.
+       ============================================================ -->
+
+  <!-- Good fluff trip — empathogenic euphoria -->
+  <TaleDef>
+    <defName>RP_HadGoodTrip_Fluff</defName>
+    <taleClass>Tale_SinglePawnAndDef</taleClass>
+    <type>Volatile</type>
+    <baseInterest>15</baseInterest>
+    <defSymbol>def</defSymbol>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->Placeholder fluff good trip noun for [PAWN_nameDef]</li>
+        <li>image->Placeholder fluff good trip image of [PAWN_nameDef] [circumstance_phrase]</li>
+        <li>desc_sentence->Placeholder fluff good trip description for [PAWN_nameDef].</li>
+        <li>circumstance_phrase->placeholder fluff good circumstance</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+  <!-- Bad fluff trip — overwhelmed, oversensitive, too-close -->
+  <TaleDef>
+    <defName>RP_HadBadTrip_Fluff</defName>
+    <taleClass>Tale_SinglePawnAndDef</taleClass>
+    <type>Volatile</type>
+    <baseInterest>15</baseInterest>
+    <defSymbol>def</defSymbol>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->Placeholder fluff bad trip noun for [PAWN_nameDef]</li>
+        <li>image->Placeholder fluff bad trip image of [PAWN_nameDef] [circumstance_phrase]</li>
+        <li>desc_sentence->Placeholder fluff bad trip description for [PAWN_nameDef].</li>
+        <li>circumstance_phrase->placeholder fluff bad circumstance</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
+
+  <!-- Shared fluff trip — bonding, mutual openness -->
+  <TaleDef>
+    <defName>RP_SharedTrip_Fluff</defName>
+    <taleClass>Tale_DoublePawnAndDef</taleClass>
+    <type>Volatile</type>
+    <baseInterest>12</baseInterest>
+    <defSymbol>def</defSymbol>
+    <rulePack>
+      <rulesStrings>
+        <li>tale_noun->Placeholder fluff shared trip noun for [PAWN_nameDef] and [OTHERPAWN_nameDef]</li>
+        <li>image->Placeholder fluff shared trip image of [PAWN_nameDef] and [OTHERPAWN_nameDef] [circumstance_phrase]</li>
+        <li>desc_sentence->Placeholder fluff shared trip description for [PAWN_nameDef] and [OTHERPAWN_nameDef].</li>
+        <li>circumstance_phrase->placeholder fluff shared circumstance</li>
+      </rulesStrings>
+    </rulePack>
+  </TaleDef>
 
 </Defs>

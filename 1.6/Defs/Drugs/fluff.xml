@@ -52,7 +52,7 @@
     <defName>RP_FluffComeUp</defName>
     <hediffClass>RimPsychedelics.Hediff_PsychedelicComeUp</hediffClass>
     <label>fluff come-up</label>
-    <description>Placeholder description for RP_FluffComeUp.</description>
+    <description>The initial intensifying stages after taking a hit of fluff.</description>
     <maxSeverity>1.0</maxSeverity>
     <isBad>false</isBad>
     <comps>
@@ -70,7 +70,7 @@
 
       <!-- Stage 2: "rising" — minSeverity 0.33, ~40 min -->
       <li>
-        <label>rising</label>
+        <label>on-set</label>
         <minSeverity>0.33</minSeverity>
         <vomitMtbDays>8</vomitMtbDays>
         <hungerRateFactor>0.7</hungerRateFactor>
@@ -116,8 +116,8 @@
   <HediffDef>
     <defName>RP_FluffTripGood</defName>
     <hediffClass>HediffWithComps</hediffClass>
-    <label>fluff trip (good)</label>
-    <description>Placeholder description for RP_FluffTripGood.</description>
+    <label>fluff roll</label>
+    <description>Rolling on fluff. Typically an immensly pleasurable experience paired with strong empathic feelings for everyone around you, but you can roll too hard and get overwhelmed. Pain and hunger are also suppressed while on fluff.</description>
     <maxSeverity>1.0</maxSeverity>
     <isBad>false</isBad>
     <comps>
@@ -132,7 +132,7 @@
 
       <!-- Fading — minSeverity 0.0, ~1.5 hr -->
       <li>
-        <label>fading</label>
+        <label>easing</label>
         <minSeverity>0.0</minSeverity>
         <painFactor>0.4</painFactor>
         <hungerRateFactor>0.5</hungerRateFactor>
@@ -153,7 +153,7 @@
 
       <!-- Plateau — minSeverity 0.30, ~2 hr -->
       <li>
-        <label>plateau</label>
+        <label>rolling</label>
         <minSeverity>0.30</minSeverity>
         <painFactor>0.15</painFactor>
         <hungerRateFactor>0.1</hungerRateFactor>
@@ -232,8 +232,8 @@
   <HediffDef>
     <defName>RP_FluffTripBad</defName>
     <hediffClass>HediffWithComps</hediffClass>
-    <label>fluff trip (bad)</label>
-    <description>Placeholder description for RP_FluffTripBad.</description>
+    <label>fluff roll</label>
+    <description>Rolling on fluff. Typically an immensly pleasurable experience paired with strong empathic feelings for everyone around you, but you can roll too hard and get overwhelmed. Pain and hunger are also suppressed while on fluff.</description>
     <maxSeverity>1.0</maxSeverity>
     <isBad>true</isBad>
     <comps>
@@ -248,7 +248,7 @@
 
       <!-- Fading — minSeverity 0.0, ~1.5 hr -->
       <li>
-        <label>fading</label>
+        <label>easing</label>
         <minSeverity>0.0</minSeverity>
         <painFactor>0.4</painFactor>
         <hungerRateFactor>0.5</hungerRateFactor>
@@ -270,7 +270,7 @@
 
       <!-- Plateau — minSeverity 0.30, ~2 hr -->
       <li>
-        <label>plateau</label>
+        <label>rolling hard</label>
         <minSeverity>0.30</minSeverity>
         <painFactor>0.15</painFactor>
         <hungerRateFactor>0.1</hungerRateFactor>
@@ -292,7 +292,7 @@
 
       <!-- Rolling — minSeverity 0.70, ~1.5 hr -->
       <li>
-        <label>rolling</label>
+        <label>rolling hard</label>
         <minSeverity>0.70</minSeverity>
         <painFactor>0.1</painFactor>
         <hungerRateFactor>0.1</hungerRateFactor>
@@ -351,8 +351,8 @@
   <HediffDef>
     <defName>RP_FluffRecovery</defName>
     <hediffClass>HediffWithComps</hediffClass>
-    <label>fluff recovery</label>
-    <description>Placeholder description for RP_FluffRecovery.</description>
+    <label>fluff crash</label>
+    <description>You partied hard and (hopefully) had a great time. Now it's time to pay the piper.</description>
     <maxSeverity>1.0</maxSeverity>
     <isBad>true</isBad>
     <comps>
@@ -364,7 +364,7 @@
 
       <!-- Fading — minSeverity 0.0, ~12 hr -->
       <li>
-        <label>fading</label>
+        <label>recovering</label>
         <minSeverity>0.0</minSeverity>
         <restFallFactor>1.1</restFallFactor>
         <hungerRateFactor>1.1</hungerRateFactor>
@@ -538,19 +538,19 @@
       <li>
         <label>Rolling on fluff</label>
         <description>I love all of you so much.</description>
-        <opinionOffset>40</opinionOffset>
+        <baseOpinionOffset>40</baseOpinionOffset>
       </li>
       <!-- Above 0.30 (Plateau) -->
       <li>
         <label>Rolling on fluff</label>
         <description>I love all of you so much.</description>
-        <opinionOffset>40</opinionOffset>
+        <baseOpinionOffset>40</baseOpinionOffset>
       </li>
       <!-- Below 0.30 (Fading) -->
       <li>
         <label>Rolling on fluff</label>
         <description>I feel so close to everyone.</description>
-        <opinionOffset>20</opinionOffset>
+        <baseOpinionOffset>20</baseOpinionOffset>
       </li>
     </stages>
   </ThoughtDef>
@@ -575,20 +575,20 @@
       <li>
         <label></label>
         <description></description>
-        <opinionOffset>0</opinionOffset>
+        <baseOpinionOffset>0</baseOpinionOffset>
         <visible>false</visible>
       </li>
       <!-- Above 0.30 (Plateau) -->
       <li>
         <label>Rolling too hard</label>
         <description>I can't handle people right now.</description>
-        <opinionOffset>-10</opinionOffset>
+        <baseOpinionOffset>-10</baseOpinionOffset>
       </li>
       <!-- Below 0.30 (Fading) -->
       <li>
         <label>Rolling too hard</label>
         <description>Other people are still a bit overwhelming.</description>
-        <opinionOffset>-5</opinionOffset>
+        <baseOpinionOffset>-5</baseOpinionOffset>
       </li>
     </stages>
   </ThoughtDef>
@@ -610,10 +610,18 @@
     <defSymbol>def</defSymbol>
     <rulePack>
       <rulesStrings>
-        <li>tale_noun->Placeholder fluff good trip noun for [PAWN_nameDef]</li>
-        <li>image->Placeholder fluff good trip image of [PAWN_nameDef] [circumstance_phrase]</li>
-        <li>desc_sentence->Placeholder fluff good trip description for [PAWN_nameDef].</li>
-        <li>circumstance_phrase->placeholder fluff good circumstance</li>
+        <li>tale_noun->[PAWN_nameDef]'s warmest hour</li>
+        <li>tale_noun->the night [PAWN_nameDef] loved everyone</li>
+        <li>tale_noun->[PAWN_nameDef] all heart</li>
+        <li>image->[PAWN_nameDef] holding someone's hand like it was the first time touching anything [circumstance_phrase]</li>
+        <li>image->a figure leaning into every embrace, eyes shining without tears</li>
+        <li>image->[PAWN_nameDef] talking with both hands, every word landing too sincerely</li>
+        <li>desc_sentence->[PAWN_nameDef] took [def_label] and meant every word [PAWN_pronoun] said for hours.</li>
+        <li>desc_sentence->The [def_label] dissolved [PAWN_possessive] guard, and [PAWN_pronoun] loved it that way.</li>
+        <li>desc_sentence->For a few hours, [PAWN_nameDef] could feel everyone in the room and didn't want to stop.</li>
+        <li>circumstance_phrase->while the music seemed to be made for them</li>
+        <li>circumstance_phrase->in a room where every face was beautiful</li>
+        <li>circumstance_phrase->with a tenderness that left no one out</li>
       </rulesStrings>
     </rulePack>
   </TaleDef>
@@ -627,10 +635,18 @@
     <defSymbol>def</defSymbol>
     <rulePack>
       <rulesStrings>
-        <li>tale_noun->Placeholder fluff bad trip noun for [PAWN_nameDef]</li>
-        <li>image->Placeholder fluff bad trip image of [PAWN_nameDef] [circumstance_phrase]</li>
-        <li>desc_sentence->Placeholder fluff bad trip description for [PAWN_nameDef].</li>
-        <li>circumstance_phrase->placeholder fluff bad circumstance</li>
+        <li>tale_noun->[PAWN_nameDef]'s overflow</li>
+        <li>tale_noun->the night the room got too loud for [PAWN_nameDef]</li>
+        <li>tale_noun->[PAWN_nameDef] rolling too hard</li>
+        <li>image->[PAWN_nameDef] curled away from a hand reaching out [circumstance_phrase]</li>
+        <li>image->a figure with a gentle smile that won't quite hold</li>
+        <li>image->[PAWN_nameDef] saying I love you to a wall because the people had become too much</li>
+        <li>desc_sentence->[PAWN_nameDef] took [def_label] and felt every emotion at once, and most of them weren't [PAWN_possessive].</li>
+        <li>desc_sentence->The [def_label] left [PAWN_nameDef] raw to a world that wouldn't quiet down.</li>
+        <li>desc_sentence->Every kindness landed too hard. [PAWN_nameDef] needed it to stop.</li>
+        <li>circumstance_phrase->while every voice felt aimed at them</li>
+        <li>circumstance_phrase->in the small space between connection and panic</li>
+        <li>circumstance_phrase->as the crowd became a single overwhelming presence</li>
       </rulesStrings>
     </rulePack>
   </TaleDef>
@@ -644,10 +660,18 @@
     <defSymbol>def</defSymbol>
     <rulePack>
       <rulesStrings>
-        <li>tale_noun->Placeholder fluff shared trip noun for [PAWN_nameDef] and [OTHERPAWN_nameDef]</li>
-        <li>image->Placeholder fluff shared trip image of [PAWN_nameDef] and [OTHERPAWN_nameDef] [circumstance_phrase]</li>
-        <li>desc_sentence->Placeholder fluff shared trip description for [PAWN_nameDef] and [OTHERPAWN_nameDef].</li>
-        <li>circumstance_phrase->placeholder fluff shared circumstance</li>
+        <li>tale_noun->the night [PAWN_nameDef] and [OTHERPAWN_nameDef] found each other</li>
+        <li>tale_noun->[PAWN_nameDef] and [OTHERPAWN_nameDef] rolling together</li>
+        <li>tale_noun->the [def_label] hour [PAWN_nameDef] and [OTHERPAWN_nameDef] shared</li>
+        <li>image->[PAWN_nameDef] and [OTHERPAWN_nameDef] saying the things they'd never say sober [circumstance_phrase]</li>
+        <li>image->two figures with their foreheads touching, listening</li>
+        <li>image->[PAWN_nameDef] and [OTHERPAWN_nameDef] laughing too easily, holding on too long</li>
+        <li>desc_sentence->[PAWN_nameDef] and [OTHERPAWN_nameDef] took [def_label] together and let every wall come down.</li>
+        <li>desc_sentence->The [def_label] gave them both permission to mean it.</li>
+        <li>desc_sentence->For a few hours, [PAWN_nameDef] and [OTHERPAWN_nameDef] forgot who they were supposed to be around each other.</li>
+        <li>circumstance_phrase->in the kind of closeness that doesn't survive sobriety</li>
+        <li>circumstance_phrase->while every confession felt safe</li>
+        <li>circumstance_phrase->with no distance left between them</li>
       </rulesStrings>
     </rulePack>
   </TaleDef>

@@ -52,34 +52,6 @@
 		</value>
 	</Operation>
 
-	<!-- Alpha Biomes -->
-
-	<Operation Class="PatchOperationAdd" MayRequire="sarg.alphabiomes">
-		<xpath>/Defs/BiomeDef[defName = "AB_IdyllicMeadows"]/wildPlants</xpath>
-		<value>
-			<RP_Plant_TreeSassafras>0.02</RP_Plant_TreeSassafras>
-		</value>
-	</Operation>
-
-	<Operation Class="PatchOperationAdd" MayRequire="sarg.alphabiomes">
-		<xpath>/Defs/BiomeDef[defName = "AB_TarPits"]/wildPlants</xpath>
-		<value>
-			<RP_Plant_TreeSassafras>0.01</RP_Plant_TreeSassafras>
-		</value>
-	</Operation>
-
-	<Operation Class="PatchOperationAdd" MayRequire="sarg.alphabiomes">
-		<xpath>/Defs/BiomeDef[defName = "AB_MiasmicMangrove"]/wildPlants</xpath>
-		<value>
-			<RP_Plant_TreeSassafras>0.02</RP_Plant_TreeSassafras>
-		</value>
-	</Operation>
-
-	<Operation Class="PatchOperationAdd" MayRequire="sarg.alphabiomes">
-		<xpath>/Defs/BiomeDef[defName = "AB_FeraliskInfestedJungle"]/wildPlants</xpath>
-		<value>
-			<RP_Plant_TreeSassafras>0.01</RP_Plant_TreeSassafras>
-		</value>
-	</Operation>
+	<!-- Alpha Biomes patches live in Patches_AlphaBiomes.xml -->
 
 </Patch>

@@ -36,6 +36,7 @@
     </ingestible>
     <plant>
       <growDays>14</growDays>
+      <immatureGraphicPath>Things/Plant/RP_Ergo_Immature</immatureGraphicPath>
       <fertilitySensitivity>1.0</fertilitySensitivity>
       <harvestYield>13</harvestYield>
       <harvestedThingDef>RP_Ergo</harvestedThingDef>

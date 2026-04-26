@@ -680,7 +680,7 @@ Note: No thought nullification, no forgetMemoryThought. Fluff overlays euphoria;
 |--------|---------|---------|--------|
 | Mood | +35 | +28 | +15 |
 | socialFightChanceFactor | 0 | 0 | 0 |
-| opinionOffset (ThoughtWorker) | +40 | +40 | +20 |
+| baseOpinionOffset (ThoughtWorker) | +40 | +40 | +20 |
 
 Note: Good Fluff uses a custom `ThoughtWorker_RPSocialOffset` subclass to apply a universal positive opinion offset, rather than `opinionOfOthersFactor`. This creates a "love everyone" effect instead of amplifying existing relationships. See C# and XML Architecture documents for details.
 
@@ -691,7 +691,7 @@ Note: Good Fluff uses a custom `ThoughtWorker_RPSocialOffset` subclass to apply 
 | Mood | −6 | −10 | −8 |
 | socialFightChanceFactor | 0 | 0.3 | 0.8 |
 | opinionOfOthersFactor | 1.5 | 1.3 | 1.1 |
-| opinionOffset (ThoughtWorker) | — | −5 | −3 |
+| baseOpinionOffset (ThoughtWorker) | hidden | −10 | −5 |
 
 Note: Bad Fluff uses both `opinionOfOthersFactor` on the hediff stage (amplifying intensity) and a second `ThoughtWorker_RPSocialOffset` for a mild negative opinion offset.
 

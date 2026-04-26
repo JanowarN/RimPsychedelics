@@ -380,15 +380,15 @@ Use a social opinion ThoughtDef when the drug should apply a **flat offset to al
     <!-- One stage per threshold, plus one final stage for "below all" -->
     <li>
       <label>stage label</label>
-      <opinionOffset>40</opinionOffset>
+      <baseOpinionOffset>40</baseOpinionOffset>
     </li>
     <li>
       <label>stage label</label>
-      <opinionOffset>40</opinionOffset>
+      <baseOpinionOffset>40</baseOpinionOffset>
     </li>
     <li>
       <label>stage label</label>
-      <opinionOffset>20</opinionOffset>
+      <baseOpinionOffset>20</baseOpinionOffset>
     </li>
   </stages>
 </ThoughtDef>
@@ -496,8 +496,9 @@ An invisible 15-day memory thought applied at resolution. Zero mood effect, `sta
 │   ├── Recipes_DrugProcessing.xml
 │   └── Research_Psychedelics.xml
 └── Patches/
-    ├── Patches_Biomes.xml
-    └── Patches_DubsBadHygiene.xml
+    ├── Sassafras_Patches.xml      (vanilla biome wildPlants)
+    ├── Patches_AlphaBiomes.xml    (gated by PatchOperationConditional on AB_IdyllicMeadows)
+    └── Patches_DubsBadHygiene.xml (gated by PatchOperationConditional on ThirstRateMultiplier)
 ```
 
 ### Per-Drug File Contents

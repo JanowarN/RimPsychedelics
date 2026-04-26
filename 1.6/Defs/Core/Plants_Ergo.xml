@@ -47,7 +47,7 @@
       </sowTags>
       <sowMinSkill>6</sowMinSkill>
       <sowResearchPrerequisites>
-        <li>RP_LYSSynthesis</li>
+        <li>RP_ErgoCultivation</li>
       </sowResearchPrerequisites>
       <topWindExposure>0.1</topWindExposure>
       <wildOrder>2</wildOrder>

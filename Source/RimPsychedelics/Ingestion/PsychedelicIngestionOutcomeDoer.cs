@@ -1,3 +1,4 @@
+using System;
 using RimWorld;
 using Verse;
 
@@ -8,11 +9,19 @@ namespace RimPsychedelics
         // XML field — matches the ChemicalDef for this drug's tolerance
         public ChemicalDef toleranceChemical;
 
+        // Fired when an ingestion is aborted by the tolerance gate. Subscribers must not throw —
+        // invocation is wrapped in try/catch so a misbehaving subscriber can't break ingestion.
+        public static event Action<Pawn> IngestionToleranceGated;
+
         protected override void DoIngestionOutcomeSpecial(Pawn pawn, Thing ingested, int ingestedCount)
         {
             PsychedelicDrugExtension ext = ingested.def.GetModExtension<PsychedelicDrugExtension>();
             if (ext == null)
                 return;
+
+            // Consume any ritual stamp at the top so a tolerance gate doesn't leave it dangling
+            // for a later, unrelated ingestion by the same pawn.
+            bool hasRitual = RitualIngestionRegistry.TryConsume(pawn, out RitualIngestionContext ritualCtx);
 
             // 1. Read current tolerance severity
             float tolerance = 0f;
@@ -33,6 +42,10 @@ namespace RimPsychedelics
                         pawn,
                         MessageTypeDefOf.NeutralEvent);
                 }
+
+                try { IngestionToleranceGated?.Invoke(pawn); }
+                catch (Exception e) { Log.Error($"[RimPsychedelics] IngestionToleranceGated subscriber threw: {e}"); }
+
                 return;
             }
 
@@ -48,7 +61,8 @@ namespace RimPsychedelics
                 DefDatabase<TraitDef>.GetNamedSilentFail("Psychonaut")) == true;
 
             float goodChance = ValenceCurveEvaluator.EvaluateGoodTripChance(
-                mood, ext, isPsychonaut, isRitual: false);
+                mood, ext, isPsychonaut,
+                isRitual: hasRitual && ritualCtx.applyRitualValenceBonus);
 
             TripValence valence = Rand.Value < goodChance
                 ? TripValence.Good
@@ -69,9 +83,20 @@ namespace RimPsychedelics
             comeUp.wasZeroTolerance = wasZeroTolerance;
             comeUp.nextHediffDef = peakDef;
             comeUp.tripValence = valence;
-            comeUp.comeUpRateMultiplier = 1f;
+            comeUp.comeUpRateMultiplier = hasRitual ? ritualCtx.comeUpRateMultiplier : 1f;
 
             pawn.health.AddHediff(comeUp);
+
+            Find.HistoryEventsManager.RecordEvent(new HistoryEvent(
+                RP_HistoryEventDefOf.RP_IngestedPsychedelic,
+                pawn.Named(HistoryEventArgsNames.Doer)));
+
+            if (!hasRitual)
+            {
+                Find.HistoryEventsManager.RecordEvent(new HistoryEvent(
+                    RP_HistoryEventDefOf.RP_IngestedPsychedelic_NotRitual,
+                    pawn.Named(HistoryEventArgsNames.Doer)));
+            }
         }
     }
 }

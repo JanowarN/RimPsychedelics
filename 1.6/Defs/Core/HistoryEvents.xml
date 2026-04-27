@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+  <!-- Fired on every successful psychedelic ingestion (after the come-up
+       hediff is applied). The umbrella event used by precepts that respond
+       to all psychedelic use regardless of context. -->
+  <HistoryEventDef>
+    <defName>RP_IngestedPsychedelic</defName>
+    <label>used psychedelic</label>
+  </HistoryEventDef>
+
+  <!-- Fired only when the ingestion was not stamped by RitualIngestionRegistry.
+       Used by precepts that only penalize casual (non-ritual) use. -->
+  <HistoryEventDef>
+    <defName>RP_IngestedPsychedelic_NotRitual</defName>
+    <label>used psychedelic outside of ritual</label>
+  </HistoryEventDef>
+
+</Defs>

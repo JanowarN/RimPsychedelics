@@ -11,7 +11,7 @@
        (toxic mushroom — same compound in plant and harvested form).
        ============================================================ -->
 
-  <ThingDef ParentName="PlantBase">
+  <ThingDef ParentName="CavePlantBase">
     <defName>RP_Plant_MindcapMushroom</defName>
     <label>mindcap mushroom</label>
     <description>An unassuming campanulate-capped mushroom that grows in clusteres, the mindcap is a natural source of potent psychoactive alkaloids. Raw consumption causes severe sickness in both humans and animals, but when carefully dried, toxins break down and the alkaloids stabilize into a powerful psychedelic.\n\nMindcap mushrooms require darkness to grow and will die if exposed to sustained light.</description>
@@ -42,17 +42,12 @@
       <fertilitySensitivity>0.3</fertilitySensitivity>
       <harvestYield>2</harvestYield>
       <harvestedThingDef>RP_MindcapMushroom</harvestedThingDef>
-      <growMinGlow>0</growMinGlow>
-      <growOptimalGlow>0</growOptimalGlow>
       <dieIfLeafless>false</dieIfLeafless>
       <sowTags>
         <li>Ground</li>
         <li>Hydroponic</li>
       </sowTags>
       <sowMinSkill>4</sowMinSkill>
-      <sowResearchPrerequisites>
-        <li>RP_MindcapPreparation</li>
-      </sowResearchPrerequisites>
       <topWindExposure>0</topWindExposure>
       <wildOrder>2</wildOrder>
       <purpose>Food</purpose>

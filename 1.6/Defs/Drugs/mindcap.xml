@@ -599,10 +599,13 @@
     </statBases>
     <techLevel>Neolithic</techLevel>
     <ingestible>
+      <foodType>Processed</foodType>
       <joyKind>Chemical</joyKind>
       <joy>0.90</joy>
       <drugCategory>Hard</drugCategory>
       <baseIngestTicks>120</baseIngestTicks>
+      <ingestCommandString>Take {0}</ingestCommandString>
+      <ingestReportString>Taking {0}.</ingestReportString>
       <outcomeDoers>
         <li Class="RimPsychedelics.PsychedelicIngestionOutcomeDoer">
           <toleranceChemical>RP_ChemicalMindcap</toleranceChemical>

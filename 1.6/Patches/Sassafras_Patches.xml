@@ -6,7 +6,7 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>/Defs/BiomeDef[defName = "BorealForest"]/wildPlants</xpath>
 		<value>
-			<RP_Plant_TreeSassafras>0.01</RP_Plant_TreeSassafras>
+			<RP_Plant_TreeSassafras>0.02</RP_Plant_TreeSassafras>
 		</value>
 	</Operation>
 	
@@ -20,35 +20,35 @@
 	<Operation Class="PatchOperationAdd">
 		<xpath>/Defs/BiomeDef[defName = "ColdBog"]/wildPlants</xpath>
 		<value>
-			<RP_Plant_TreeSassafras>0.02</RP_Plant_TreeSassafras>
+			<RP_Plant_TreeSassafras>0.01</RP_Plant_TreeSassafras>
 		</value>
 	</Operation>
 	
 	<Operation Class="PatchOperationAdd">
 		<xpath>/Defs/BiomeDef[defName = "TemperateForest"]/wildPlants</xpath>
 		<value>
-			<RP_Plant_TreeSassafras>0.05</RP_Plant_TreeSassafras>
+			<RP_Plant_TreeSassafras>0.08</RP_Plant_TreeSassafras>
 		</value>
-	</Operation>	
-	
+	</Operation>
+
 	<Operation Class="PatchOperationAdd">
 		<xpath>/Defs/BiomeDef[defName = "TemperateSwamp"]/wildPlants</xpath>
 		<value>
-			<RP_Plant_TreeSassafras>0.08</RP_Plant_TreeSassafras>
+			<RP_Plant_TreeSassafras>0.05</RP_Plant_TreeSassafras>
 		</value>
 	</Operation>
 	
 	<Operation Class="PatchOperationAdd">
 		<xpath>/Defs/BiomeDef[defName = "TropicalSwamp"]/wildPlants</xpath>
 		<value>
-			<RP_Plant_TreeSassafras>0.02</RP_Plant_TreeSassafras>
+			<RP_Plant_TreeSassafras>0.01</RP_Plant_TreeSassafras>
 		</value>
-	</Operation>	
-	
+	</Operation>
+
 	<Operation Class="PatchOperationAdd">
 		<xpath>/Defs/BiomeDef[defName = "TropicalRainforest"]/wildPlants</xpath>
 		<value>
-			<RP_Plant_TreeSassafras>0.01</RP_Plant_TreeSassafras>
+			<RP_Plant_TreeSassafras>0.02</RP_Plant_TreeSassafras>
 		</value>
 	</Operation>
 

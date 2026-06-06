@@ -627,10 +627,13 @@
     </statBases>
     <techLevel>Industrial</techLevel>
     <ingestible>
+      <foodType>Processed</foodType>
       <joyKind>Chemical</joyKind>
       <joy>1.0</joy>
       <drugCategory>Hard</drugCategory>
       <baseIngestTicks>60</baseIngestTicks>
+      <ingestCommandString>Take {0}</ingestCommandString>
+      <ingestReportString>Taking {0}.</ingestReportString>
       <outcomeDoers>
         <!-- RP custom doer: reads extension, handles tolerance check,
              valence roll, and come-up hediff application.

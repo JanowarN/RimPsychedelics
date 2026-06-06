@@ -29,13 +29,13 @@
 				<li Class="PatchOperationAdd">
 					<xpath>/Defs/BiomeDef[defName = "AB_MiasmicMangrove"]/wildPlants</xpath>
 					<value>
-						<RP_Plant_TreeSassafras>0.02</RP_Plant_TreeSassafras>
+						<RP_Plant_TreeSassafras>0.01</RP_Plant_TreeSassafras>
 					</value>
 				</li>
 				<li Class="PatchOperationAdd">
 					<xpath>/Defs/BiomeDef[defName = "AB_FeraliskInfestedJungle"]/wildPlants</xpath>
 					<value>
-						<RP_Plant_TreeSassafras>0.01</RP_Plant_TreeSassafras>
+						<RP_Plant_TreeSassafras>0.02</RP_Plant_TreeSassafras>
 					</value>
 				</li>
 			</operations>

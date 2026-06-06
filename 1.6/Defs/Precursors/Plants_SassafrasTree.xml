@@ -27,6 +27,8 @@
     <plant>
       <growDays>28</growDays>
       <leaflessGraphicPath>Things/Plant/RP_TreeSassafras_Leafless</leaflessGraphicPath>
+      <immatureGraphicPath>Things/Plant/RP_TreeSassafras_Immature</immatureGraphicPath>
+      <leaflessImmatureGraphicPath>Things/Plant/RP_TreeSassafras_LeaflessImmature</leaflessImmatureGraphicPath>
       <harvestWork>1000</harvestWork>
       <harvestYield>32</harvestYield>
       <choppedThingDef>RP_ChoppedStumpSassafras</choppedThingDef>

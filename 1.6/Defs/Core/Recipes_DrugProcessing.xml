@@ -20,7 +20,7 @@
     <label>dry mindcap mushrooms</label>
     <description>Carefully dry raw mindcap mushrooms to make them safe to ingest.</description>
     <jobString>Drying mindcap mushrooms.</jobString>
-    <workAmount>200</workAmount>
+    <workAmount>300</workAmount>
     <workSpeedStat>DrugSynthesisSpeed</workSpeedStat>
     <effectWorking>Cook</effectWorking>
     <soundWorking>Recipe_CookMeal</soundWorking>

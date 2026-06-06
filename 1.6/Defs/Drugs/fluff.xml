@@ -437,10 +437,13 @@
     </statBases>
     <techLevel>Industrial</techLevel>
     <ingestible>
+      <foodType>Processed</foodType>
       <joyKind>Chemical</joyKind>
       <joy>1.0</joy>
       <drugCategory>Social</drugCategory>
       <baseIngestTicks>60</baseIngestTicks>
+      <ingestCommandString>Take {0}</ingestCommandString>
+      <ingestReportString>Taking {0}.</ingestReportString>
       <outcomeDoers>
         <li Class="RimPsychedelics.PsychedelicIngestionOutcomeDoer">
           <toleranceChemical>RP_ChemicalFluff</toleranceChemical>

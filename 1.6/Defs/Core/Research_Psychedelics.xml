@@ -23,8 +23,9 @@
   <!-- ============================================================
        1. MINDCAP PREPARATION
        Neolithic tier. No prerequisites. Unlocks:
-       - Sowing RP_Plant_MindcapMushroom
        - Recipe: dry mindcap mushrooms
+       (The mindcap plant itself is sowable from game start — research
+        only gates the drying recipe, not cultivation.)
        ============================================================ -->
   <ResearchProjectDef>
     <defName>RP_MindcapPreparation</defName>

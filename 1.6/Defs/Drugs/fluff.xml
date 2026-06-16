@@ -526,7 +526,9 @@
        2 thresholds → 3 stages. -->
   <ThoughtDef>
     <defName>RP_FluffGoodTripSocial</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
     <workerClass>RimPsychedelics.ThoughtWorker_RPSocialOffset</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
     <modExtensions>
       <li Class="RimPsychedelics.SocialOffsetExtension">
         <hediffDef>RP_FluffTripGood</hediffDef>
@@ -563,7 +565,9 @@
        2 thresholds → 3 stages. -->
   <ThoughtDef>
     <defName>RP_FluffBadTripSocial</defName>
+    <thoughtClass>Thought_SituationalSocial</thoughtClass>
     <workerClass>RimPsychedelics.ThoughtWorker_RPSocialOffset</workerClass>
+    <validWhileDespawned>true</validWhileDespawned>
     <modExtensions>
       <li Class="RimPsychedelics.SocialOffsetExtension">
         <hediffDef>RP_FluffTripBad</hediffDef>
